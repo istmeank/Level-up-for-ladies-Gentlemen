@@ -1,9 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.png";
-
 const WhoAmI = () => {
-  return (
-    <section className="py-20 px-6 bg-gradient-to-br from-cosmic-deep-space via-background to-cosmic-deep-space">
+  return <section className="py-20 px-6 bg-gradient-to-br from-cosmic-deep-space via-background to-cosmic-deep-space">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
@@ -59,11 +57,7 @@ const WhoAmI = () => {
               
               <div className="relative bg-gradient-to-br from-card to-cosmic-deep-space rounded-full p-4 border border-cosmic-stellar-gold/40 shadow-2xl h-full">
                 <div className="w-full h-full rounded-full overflow-hidden">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Photo de profil - Le sage Roi des nuages" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={profilePhoto} alt="Photo de profil - Le sage Roi des nuages" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -95,11 +89,7 @@ const WhoAmI = () => {
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold cosmic-text mb-6">Mon Parcours</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Fort de plusieurs années d'expérience dans le développement personnel et professionnel, 
-                  j'accompagne les Ladies & Gentlemen dans leur quête d'excellence. Ma mission est de vous 
-                  aider à révéler votre potentiel et à atteindre vos objectifs les plus ambitieux.
-                </p>
+                <p className="text-muted-foreground leading-relaxed">Fort de plusieurs années d'expérience dans la Psychothérapie et professionnel, j'accompagne les Ladies & Gentlemen dans leur quête d'excellence. Ma mission est de vous aider à révéler votre potentiel et à atteindre vos objectifs les plus ambitieux.</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-4 right-4 w-1 h-1 bg-cosmic-stellar-gold rounded-full animate-pulse"></div>
@@ -125,8 +115,6 @@ const WhoAmI = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhoAmI;
