@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-
 const Contact = () => {
-  return (
-    <section className="py-20 px-6 relative">
+  return <section className="py-20 px-6 relative">
       <div className="max-w-4xl mx-auto text-center">
         <div className="relative">
           {/* Effet de rayonnement */}
@@ -13,10 +11,7 @@ const Contact = () => {
               Prêt(e) pour l'Élévation ?
             </h2>
             
-            <p className="text-xl text-card-foreground mb-12 leading-relaxed max-w-2xl mx-auto">
-              L'univers conspire pour ta réussite. Il ne reste qu'un pas à franchir 
-              pour entrer dans ta nouvelle réalité quantique.
-            </p>
+            <p className="text-xl text-card-foreground mb-12 leading-relaxed max-w-2xl mx-auto">L'univers conspire pour ta réussite. Il ne reste qu'un pas à franchir pour entrer dans ta nouvelle réalité.</p>
 
             {/* Statistiques cosmiques */}
             <div className="grid grid-cols-3 gap-8 mb-12">
@@ -79,8 +74,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
