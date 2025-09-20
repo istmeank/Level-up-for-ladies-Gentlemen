@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'tangerine': ['Tangerine', 'cursive'],
+        'brush': ['Kaushan Script', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

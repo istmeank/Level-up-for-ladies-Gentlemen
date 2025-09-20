@@ -74,7 +74,7 @@ const WhoAmI = () => {
 
         {/* Titre honorifique */}
         <div className="text-center mb-12">
-          <p className="text-xl text-cosmic-stellar-gold italic font-semibold">
+          <p className="text-2xl text-cosmic-stellar-gold font-brush">
             "Le sage Roi des nuages"
           </p>
           <p className="text-sm text-muted-foreground mt-2">Comme m'appellent mes Padawans</p>
