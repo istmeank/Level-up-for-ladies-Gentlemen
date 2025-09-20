@@ -103,7 +103,7 @@ const Formations = () => {
             Formations Exclusives
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Développez vos compétences avec nos formations premium conçues pour les Hommes et Les femmes ambitieux(se)</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Développez vos compétences avec nos formations premium conçues pour les Hommes et Les femmes ambitieux(ses)</p>
         </div>
 
         {formations.length === 0 ? <div className="text-center py-16">
