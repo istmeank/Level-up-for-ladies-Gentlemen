@@ -89,7 +89,7 @@ const WhoAmI = () => {
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold cosmic-text mb-6">Mon Parcours</h3>
-                <p className="text-muted-foreground leading-relaxed">Fort de plusieurs années d'expérience dans la Psychothérapie et pr, j'accompagne les Ladies & Gentlemen dans leur quête d'excellence. Ma mission est de vous aider à révéler votre potentiel et à atteindre vos objectifs les plus ambitieux.</p>
+                <p className="text-muted-foreground leading-relaxed">Fort de plusieurs années d'expérience dans la Psychothérapie et le Developpement personnel et professionel, j'accompagne les Ladies & Gentlemen dans leur quête d'excellence. Ma mission est de vous aider à révéler votre potentiel et à atteindre vos objectifs les plus ambitieux.</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-4 right-4 w-1 h-1 bg-cosmic-stellar-gold rounded-full animate-pulse"></div>
