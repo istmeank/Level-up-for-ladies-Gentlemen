@@ -34,7 +34,7 @@ const About = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-cosmic-nebula-purple to-cosmic-nebula-green rounded-lg blur opacity-25"></div>
               <div className="relative bg-card p-8 rounded-lg border border-cosmic-nebula-green/20">
                 <h3 className="text-2xl font-semibold text-cosmic-stellar-gold mb-4">🌟 Mission </h3>
-                <p className="text-card-foreground leading-relaxed">Offrir aux Hommes et aux femmes de valeur l'opportunité de s'éveillé, progresser et de se réunir pour créer une société saine de très haute valeur </p>
+                <p className="text-card-foreground leading-relaxed">Offrir aux Hommes et aux femmes de valeur l'opportunité de s'éveiller, progresser et de se réunir pour créer une société saine de très haute valeur </p>
               </div>
             </div>
 
