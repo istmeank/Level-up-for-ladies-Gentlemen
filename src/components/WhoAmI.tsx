@@ -77,9 +77,7 @@ const WhoAmI = () => {
           <p className="text-xl text-cosmic-stellar-gold italic font-semibold">
             "Le sage Roi des nuages"
           </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            Comme m'appellent affectueusement mes Padawans
-          </p>
+          <p className="text-sm text-muted-foreground mt-2">Comme m'appellent mes Padawans</p>
         </div>
 
         {/* Contenu - en bas en colonnes */}
