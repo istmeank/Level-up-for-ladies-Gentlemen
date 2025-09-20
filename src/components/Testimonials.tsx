@@ -26,8 +26,9 @@ const Testimonials = () => {
     <section className="py-24 bg-gradient-to-b from-cosmic-deep-space/30 to-cosmic-void/50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cosmic-stellar-gold via-cosmic-nebula-pink to-cosmic-aurora-cyan bg-clip-text text-transparent">
-            Témoignages
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cosmic-stellar-gold relative">
+            <span className="relative z-10">Témoignages</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-cosmic-stellar-gold via-cosmic-nebula-pink to-cosmic-aurora-cyan opacity-30 blur-sm -z-10"></div>
           </h2>
           <p className="text-lg text-cosmic-star-white/80 max-w-2xl mx-auto leading-relaxed">
             Découvrez les transformations vécues par nos participants
