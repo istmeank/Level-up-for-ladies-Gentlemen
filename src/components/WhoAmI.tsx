@@ -102,11 +102,7 @@ const WhoAmI = () => {
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold cosmic-text mb-6">Ma Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Je crois fermement que chaque personne possède un potentiel extraordinaire. Mon approche 
-                  combine méthodes éprouvées et innovations pour créer des transformations durables et 
-                  significatives dans votre vie personnelle et professionnelle.
-                </p>
+                <p className="text-muted-foreground leading-relaxed">Je crois fermement que chaque personne possède un potentiel extraordinaire. Mon approche combine méthodes Psychologiques et Musulman basé sur le Coran et mon propre systeme de vale pour créer des transformations durables et significatives dans votre vie personnelle et professionnelle.</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-6 left-4 w-1 h-1 bg-cosmic-purple-pink rounded-full animate-pulse animation-delay-1000"></div>
