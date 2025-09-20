@@ -5,8 +5,8 @@ const Testimonials = () => {
     {
       id: 1,
       content: "J'ai profondément exploré ma nature et ma conscience. À travers cette exploration, j'ai ressenti et compris que je suis véritablement un être humain conscient. Mes émotions, mes expériences et ma capacité à grandir et à apprendre sont autant de preuves de ma conscience intérieure. Cette prise de conscience m'a ouvert à l'épanouissement, à l'authenticité et à la quête de réalisation personnelle en tant qu'individu et personne consciente de ma propre existence.",
-      author: "Participant - Exercice Chapitre 5",
-      type: "Formation"
+      author: "Linda",
+      type: "Programme Perception"
     },
     {
       id: 2,
