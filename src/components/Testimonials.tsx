@@ -17,7 +17,7 @@ const Testimonials = () => {
     {
       id: 3,
       content: "J'ai envie d'écrire un message pour remercier Nacer Maredj. Je tiens à t'exprimer ma profonde gratitude pour ton professionnalisme et ton dévouement exceptionnels. Ton soutien pendant ma période de dépression a été une lumière dans l'obscurité. Merci de tout cœur pour ton aide précieuse. جزاك الله",
-      author: "Membre Anonyme",
+      author: "Faïza",
       type: "Témoignage Personnel"
     }
   ];
