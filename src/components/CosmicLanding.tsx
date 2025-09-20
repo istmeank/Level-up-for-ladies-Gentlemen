@@ -6,6 +6,7 @@ import Formations from "./Formations";
 import ServicesProducts from "./ServicesProducts";
 import Services from "./Services";
 import Contact from "./Contact";
+import Testimonials from "./Testimonials";
 import logoLevelUp from "@/assets/logo-level-up-new.png";
 
 const CosmicLanding = () => {
@@ -22,6 +23,9 @@ const CosmicLanding = () => {
         </div>
         <div id="formations">
           <Formations />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
         </div>
         <div id="services-products">
           <ServicesProducts />
