@@ -141,7 +141,7 @@ const Formations = () => {
 
                 <CardContent className="flex-1 flex flex-col">
                   <p className="text-muted-foreground mb-6 flex-1">
-                    {formation.description}
+                    apprenez à construire des relations qui durent sur le long terme grâce à cette formation qui vous apprendra les bases solides d'un mariage réussi
                   </p>
 
                   <div className="flex items-center justify-between">
