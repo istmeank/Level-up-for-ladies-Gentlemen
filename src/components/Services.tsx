@@ -28,7 +28,7 @@ const Services = () => {
             chaque pilier une porte qui s'ouvre sur un univers à explorer
           </p>
           <p className="text-lg text-cosmic-stellar-gold/90 font-semibold">
-            Espace exclusif • Places limitées • 2500 DA/mois pour les 15 premières
+            Groupe Limité à 20 personnes avec un prix symbolique de 2500 DA pour les 10 premiers piliers
           </p>
         </div>
 
