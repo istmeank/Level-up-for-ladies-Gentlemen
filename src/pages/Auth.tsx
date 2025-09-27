@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { User, Session } from "@supabase/supabase-js";
 import { toast } from "sonner";
+import { authSchema, type AuthFormData } from "@/lib/validation";
 
 const Auth = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -47,6 +48,14 @@ const Auth = () => {
   }, [navigate]);
 
   const signUp = async (email: string, password: string) => {
+    // Validate input data
+    try {
+      authSchema.parse({ email, password });
+    } catch (error: any) {
+      toast.error(error.errors?.[0]?.message || "Données invalides");
+      return;
+    }
+
     setLoading(true);
     const redirectUrl = `${window.location.origin}/`;
     
@@ -64,7 +73,7 @@ const Auth = () => {
       if (error.message.includes("User already registered")) {
         toast.error("Un compte existe déjà avec cette adresse email. Essayez de vous connecter.");
       } else {
-        toast.error(error.message);
+        toast.error("Erreur lors de l'inscription. Veuillez réessayer.");
       }
     } else {
       toast.success("Vérifiez votre email pour confirmer votre inscription !");
@@ -72,6 +81,14 @@ const Auth = () => {
   };
 
   const signIn = async (email: string, password: string) => {
+    // Validate input data
+    try {
+      authSchema.parse({ email, password });
+    } catch (error: any) {
+      toast.error(error.errors?.[0]?.message || "Données invalides");
+      return;
+    }
+
     setLoading(true);
     
     const { error } = await supabase.auth.signInWithPassword({
@@ -85,15 +102,13 @@ const Auth = () => {
       if (error.message.includes("Invalid login credentials")) {
         toast.error("Identifiants invalides. Vérifiez votre email et mot de passe.");
       } else {
-        toast.error(error.message);
+        toast.error("Erreur de connexion. Veuillez réessayer.");
       }
     }
   };
 
   const signInWithGoogle = async () => {
     setLoading(true);
-    console.log('Initiating Google authentication...');
-    console.log('Current URL:', window.location.origin);
     
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -105,13 +120,7 @@ const Auth = () => {
     setLoading(false);
     
     if (error) {
-      console.error('Google auth error details:', {
-        message: error.message,
-        name: error.name,
-        status: error.status
-      });
-      
-      // Provide specific error messages based on error type
+      // Provide specific error messages based on error type without exposing sensitive details
       if (error.message.includes('403') || error.message.includes('access')) {
         toast.error("Erreur 403: Configuration Google requise. Vérifiez les URLs autorisées dans Google Cloud Console.");
       } else if (error.message.includes('redirect')) {
@@ -119,10 +128,8 @@ const Auth = () => {
       } else if (error.message.includes('oauth')) {
         toast.error("Erreur OAuth. Vérifiez que Google est activé dans Supabase Auth.");
       } else {
-        toast.error(`Erreur Google Auth: ${error.message}`);
+        toast.error("Erreur lors de la connexion Google. Veuillez réessayer.");
       }
-    } else {
-      console.log('Google auth initiated successfully');
     }
   };
 

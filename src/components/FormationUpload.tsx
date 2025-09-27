@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Upload, Video, Image, Shield } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { formationSchema, videoFileSchema, imageFileSchema, type FormationFormData } from "@/lib/validation";
 
 const FormationUpload = () => {
   const [loading, setLoading] = useState(false);
@@ -62,6 +63,14 @@ const FormationUpload = () => {
       return;
     }
 
+    // Validate form data
+    try {
+      formationSchema.parse(formData);
+    } catch (error: any) {
+      toast.error(error.errors?.[0]?.message || "Données du formulaire invalides");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -89,7 +98,6 @@ const FormationUpload = () => {
         level: 'débutant'
       });
     } catch (error) {
-      console.error('Error creating formation:', error);
       toast.error('Erreur lors de la création de la formation');
     } finally {
       setLoading(false);
@@ -99,6 +107,14 @@ const FormationUpload = () => {
   const handleVideoUpload = async (file: File, formationId: string) => {
     if (!isAdmin) {
       toast.error('Accès refusé. Seuls les administrateurs peuvent uploader des vidéos.');
+      return;
+    }
+
+    // Validate video file
+    try {
+      videoFileSchema.parse({ file });
+    } catch (error: any) {
+      toast.error(error.errors?.[0]?.message || "Format de fichier vidéo invalide");
       return;
     }
 
@@ -122,7 +138,6 @@ const FormationUpload = () => {
 
       toast.success('Vidéo uploadée avec succès !');
     } catch (error) {
-      console.error('Error uploading video:', error);
       toast.error('Erreur lors de l\'upload de la vidéo');
     }
   };
@@ -130,6 +145,14 @@ const FormationUpload = () => {
   const handleThumbnailUpload = async (file: File, formationId: string) => {
     if (!isAdmin) {
       toast.error('Accès refusé. Seuls les administrateurs peuvent uploader des miniatures.');
+      return;
+    }
+
+    // Validate image file
+    try {
+      imageFileSchema.parse({ file });
+    } catch (error: any) {
+      toast.error(error.errors?.[0]?.message || "Format de fichier image invalide");
       return;
     }
 
@@ -157,7 +180,6 @@ const FormationUpload = () => {
 
       toast.success('Miniature uploadée avec succès !');
     } catch (error) {
-      console.error('Error uploading thumbnail:', error);
       toast.error('Erreur lors de l\'upload de la miniature');
     }
   };
