@@ -99,7 +99,7 @@ const ServicesProducts = () => {
           </div> : <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map(item => <Card key={item.id} className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group flex flex-col">
                 <div className="relative overflow-hidden rounded-t-lg">
-                  {item.image_url ? <img src={item.image_url} alt={item.name} className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-300 p-2" /> : <div className="w-full h-48 bg-gradient-to-br from-cosmic-stellar-gold/20 to-cosmic-nebula-green/20 flex items-center justify-center">
+                  {item.image_url ? <img src={item.image_url} alt={item.name} className="w-full h-56 md:h-64 object-contain group-hover:scale-105 transition-transform duration-300 p-0" /> : <div className="w-full h-56 md:h-64 bg-gradient-to-br from-cosmic-stellar-gold/20 to-cosmic-nebula-green/20 flex items-center justify-center">
                       {getTypeIcon(item.type)}
                     </div>}
                   <div className="absolute top-4 right-4">
