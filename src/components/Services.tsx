@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-20 px-6 relative">
       {/* Fond avec particules */}
@@ -21,14 +24,13 @@ const Services = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
-            Nos Portails d'Élévation
+            {t('services.title')}
           </h2>
           <p className="text-xl text-cosmic-star-white/80 max-w-3xl mx-auto leading-relaxed mb-6">
-            Chaque L représente un pilier, chaque pilier une nuance, 
-            chaque pilier une porte qui s'ouvre sur un univers à explorer
+            {t('services.subtitle')}
           </p>
           <p className="text-lg text-cosmic-stellar-gold/90 font-semibold">
-            Groupe Limité à 20 personnes avec un prix symbolique de 2500 DA pour les 10 premiers piliers
+            {t('services.limitedGroup')}
           </p>
         </div>
 
@@ -39,10 +41,10 @@ const Services = () => {
               🔗
             </div>
             <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
-              Connexion Session
+              {t('services.connectionSession')}
             </h3>
             <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
-              Première séance obligatoire du mois pour développer des liens authentiques et apprendre à bien s'entourer
+              {t('services.connectionText')}
             </p>
           </div>
 
@@ -52,10 +54,10 @@ const Services = () => {
               📚
             </div>
             <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
-              Lecture & Analyse
+              {t('services.readingAnalysis')}
             </h3>
             <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
-              Deuxième séance : lecture et décorticage d'un chapitre de livre choisi ensemble pour enrichir nos perspectives
+              {t('services.readingText')}
             </p>
           </div>
 
@@ -65,10 +67,10 @@ const Services = () => {
               💎
             </div>
             <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
-              Système de Valeurs
+              {t('services.valueSystem')}
             </h3>
             <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
-              Troisième séance : exploration et compréhension profonde des valeurs et de leurs implications dans nos vies
+              {t('services.valueText')}
             </p>
           </div>
 
@@ -78,10 +80,10 @@ const Services = () => {
               🎤
             </div>
             <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
-              Conférences Thématiques
+              {t('services.conferences')}
             </h3>
             <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
-              Quatrième séance : conférence sur un thème choisi ensemble, d'une valeur de 4000 DA chacune
+              {t('services.conferencesText')}
             </p>
           </div>
         </div>
@@ -89,23 +91,23 @@ const Services = () => {
         {/* Avantages exclusifs */}
         <div className="mt-16 cosmic-glow p-8 rounded-2xl">
           <h3 className="text-2xl font-bold text-cosmic-stellar-gold mb-6 text-center">
-            Avantages Exclusifs
+            {t('services.exclusiveAdvantages')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-3xl mb-2">📱</div>
-              <h4 className="font-semibold text-cosmic-star-white mb-2">WhatsApp VIP</h4>
-              <p className="text-sm text-cosmic-star-white/70">Accès au groupe exclusif LEVEL + et questions directes à Nacer</p>
+              <h4 className="font-semibold text-cosmic-star-white mb-2">{t('services.whatsappVIP')}</h4>
+              <p className="text-sm text-cosmic-star-white/70">{t('services.whatsappText')}</p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-2">🎯</div>
-              <h4 className="font-semibold text-cosmic-star-white mb-2">Meetings Google Meet</h4>
-              <p className="text-sm text-cosmic-star-white/70">Chaque vendredi à 19h/20h + rediffusions de l'année</p>
+              <h4 className="font-semibold text-cosmic-star-white mb-2">{t('services.googleMeet')}</h4>
+              <p className="text-sm text-cosmic-star-white/70">{t('services.googleMeetText')}</p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-2">🏆</div>
-              <h4 className="font-semibold text-cosmic-star-white mb-2">Système de Points</h4>
-              <p className="text-sm text-cosmic-star-white/70">Gagnez des points convertibles en récompenses exclusives</p>
+              <h4 className="font-semibold text-cosmic-star-white mb-2">{t('services.pointsSystem')}</h4>
+              <p className="text-sm text-cosmic-star-white/70">{t('services.pointsText')}</p>
             </div>
           </div>
         </div>
@@ -113,7 +115,7 @@ const Services = () => {
 
         <div className="text-center mt-12">
           <Button variant="royal" size="xl">
-            Rejoindre nos Padawan's
+            {t('services.joinPadawans')}
           </Button>
         </div>
       </div>

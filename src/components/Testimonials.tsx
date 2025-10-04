@@ -1,24 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
+  const { t } = useTranslation();
+  
   const testimonials = [
     {
       id: 1,
       content: "J'ai profondément exploré ma nature et ma conscience. À travers cette exploration, j'ai ressenti et compris que je suis véritablement un être humain conscient. Mes émotions, mes expériences et ma capacité à grandir et à apprendre sont autant de preuves de ma conscience intérieure. Cette prise de conscience m'a ouvert à l'épanouissement, à l'authenticité et à la quête de réalisation personnelle en tant qu'individu et personne consciente de ma propre existence.",
       author: "Linda",
-      type: "Programme Perception"
+      type: t('testimonials.perceptionProgram')
     },
     {
       id: 2,
       content: "Je suis OKEBANE nour el houda j'ai participé au programme perception (janvier - mai) voici mon témoignage. Lorsque j'ai entamé ce programme, je ne savais pas à quoi m'attendre. C'était une étape importante dans ma vie que je ne regretterai jamais. Ce programme a véritablement transformé ma vie, en particulier ma confiance en moi et mon estime de moi par rapport à mes traumas aussi). Témoignage appris sur moi-même. On a découvert, nombreuses valeurs et partagé des moments enrichissants. we really had so much fun. Je recommande vivement ce programme, en vous encourageant à vous investir pleinement. Vous constaterez à quel point votre vie peut changer pour le mieux, insha'Allah ❤️",
       author: "Noor el Houda",
-      type: "Programme Perception"
+      type: t('testimonials.perceptionProgram')
     },
     {
       id: 3,
       content: "J'ai envie d'écrire un message pour remercier Nacer Maredj. Je tiens à t'exprimer ma profonde gratitude pour ton professionnalisme et ton dévouement exceptionnels. Ton soutien pendant ma période de dépression a été une lumière dans l'obscurité. Merci de tout cœur pour ton aide précieuse. جزاك الله",
       author: "Faïza",
-      type: "Témoignage Personnel"
+      type: t('testimonials.personalTestimony')
     }
   ];
 
@@ -27,11 +30,11 @@ const Testimonials = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cosmic-stellar-gold relative">
-            <span className="relative z-10">Témoignages</span>
+            <span className="relative z-10">{t('testimonials.title')}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cosmic-stellar-gold via-cosmic-nebula-pink to-cosmic-aurora-cyan opacity-30 blur-sm -z-10"></div>
           </h2>
           <p className="text-lg text-cosmic-star-white/80 max-w-2xl mx-auto leading-relaxed">
-            Découvrez les transformations vécues par nos participants
+            {t('testimonials.subtitle')}
           </p>
         </div>
 

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Play, Clock, Star, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 interface Formation {
   id: string;
   title: string;
@@ -20,6 +21,7 @@ interface FormationPurchase {
   payment_status: string;
 }
 const Formations = () => {
+  const { t } = useTranslation();
   const [formations, setFormations] = useState<Formation[]>([]);
   const [purchases, setPurchases] = useState<FormationPurchase[]>([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +41,7 @@ const Formations = () => {
       setFormations(data || []);
     } catch (error) {
       console.error('Error fetching formations:', error);
-      toast.error('Erreur lors du chargement des formations');
+      toast.error(t('formations.loading'));
     } finally {
       setLoading(false);
     }
@@ -92,7 +94,7 @@ const Formations = () => {
   if (loading) {
     return <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="animate-pulse">Chargement des formations...</div>
+          <div className="animate-pulse">{t('formations.loading')}</div>
         </div>
       </section>;
   }
@@ -100,10 +102,10 @@ const Formations = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
-            Formations Exclusives
+            {t('formations.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Développez vos compétences avec nos formations premium conçues pour les Hommes et Les femmes ambitieux(ses)</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t('formations.subtitle')}</p>
         </div>
 
         {formations.length === 0 ? <div className="text-center py-16">
@@ -126,7 +128,7 @@ const Formations = () => {
                   {isPurchased(formation.id) && <div className="absolute top-4 left-4">
                       <Badge className="bg-cosmic-nebula-green/20 text-cosmic-nebula-green">
                         <Star className="w-3 h-3 mr-1" />
-                        Acquise
+                        {t('formations.acquired')}
                       </Badge>
                     </div>}
                 </div>
@@ -135,7 +137,7 @@ const Formations = () => {
                   <CardTitle className="cosmic-text text-xl mb-2">{formation.title}</CardTitle>
                   {formation.duration && <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="w-4 h-4 mr-1" />
-                      {formation.duration} minutes
+                      {formation.duration} {t('formations.minutes')}
                     </div>}
                 </CardHeader>
 
@@ -146,11 +148,11 @@ const Formations = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="text-2xl font-bold cosmic-text">
-                      {formation.price === 0 ? 'Gratuit' : `${formation.price} DA`}
+                      {formation.price === 0 ? t('formations.free') : `${formation.price} DA`}
                     </div>
 
                     <Button variant="outline" className="gap-2 border-cosmic-stellar-gold/30 hover:bg-cosmic-stellar-gold/10" onClick={() => handlePurchase(formation)}>
-                      Acheter maintenant
+                      {t('formations.buyNow')}
                     </Button>
                   </div>
                 </CardContent>

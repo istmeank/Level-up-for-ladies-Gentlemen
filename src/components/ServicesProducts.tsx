@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Package, Briefcase, Check } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 interface ServiceProduct {
   id: string;
   name: string;
@@ -16,6 +17,7 @@ interface ServiceProduct {
   is_active: boolean;
 }
 const ServicesProducts = () => {
+  const { t } = useTranslation();
   const [items, setItems] = useState<ServiceProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedType, setSelectedType] = useState<'all' | 'service' | 'product'>('all');
@@ -34,7 +36,7 @@ const ServicesProducts = () => {
       setItems(data || []);
     } catch (error) {
       console.error('Error fetching services/products:', error);
-      toast.error('Erreur lors du chargement des services et produits');
+      toast.error(t('servicesProducts.loading'));
     } finally {
       setLoading(false);
     }
@@ -46,7 +48,7 @@ const ServicesProducts = () => {
       contactSection.scrollIntoView({
         behavior: 'smooth'
       });
-      toast.info(`Contactez-moi pour en savoir plus sur "${item.name}"`);
+      toast.info(`${t('servicesProducts.contactMe')} "${item.name}"`);
     }
   };
   const filteredItems = items.filter(item => selectedType === 'all' || item.type === selectedType);
@@ -59,7 +61,7 @@ const ServicesProducts = () => {
   if (loading) {
     return <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="animate-pulse">Chargement des services et produits...</div>
+          <div className="animate-pulse">{t('servicesProducts.loading')}</div>
         </div>
       </section>;
   }
@@ -67,25 +69,25 @@ const ServicesProducts = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
-            Services & Produits
+            {t('servicesProducts.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Découvrez nos services d'accompagnement personnalisés et nos produits exclusifs pour votre développement
+            {t('servicesProducts.subtitle')}
           </p>
 
           {/* Filtres */}
           <div className="flex justify-center gap-4 mb-12">
             <Button variant={selectedType === 'all' ? 'stellar' : 'outline'} onClick={() => setSelectedType('all')} className="gap-2">
-              Tout voir
+              {t('servicesProducts.viewAll')}
             </Button>
             <Button variant={selectedType === 'service' ? 'stellar' : 'outline'} onClick={() => setSelectedType('service')} className="gap-2">
               <Briefcase className="w-4 h-4" />
-              Services
+              {t('servicesProducts.services')}
             </Button>
             <Button variant={selectedType === 'product' ? 'stellar' : 'outline'} onClick={() => setSelectedType('product')} className="gap-2">
               <Package className="w-4 h-4" />
-              Produits
+              {t('servicesProducts.products')}
             </Button>
           </div>
         </div>
@@ -121,14 +123,14 @@ const ServicesProducts = () => {
 
                   {/* Fonctionnalités */}
                   {item.features && Array.isArray(item.features) && item.features.length > 0 && <div className="mb-6">
-                      <h4 className="font-semibold text-cosmic-stellar-gold mb-3">Inclus :</h4>
+                      <h4 className="font-semibold text-cosmic-stellar-gold mb-3">{t('servicesProducts.included')}</h4>
                       <ul className="space-y-2">
                         {item.features.slice(0, 3).map((feature: string, index: number) => <li key={index} className="flex items-center text-sm text-muted-foreground">
                             <Check className="w-4 h-4 text-cosmic-nebula-green mr-2 flex-shrink-0" />
                             {feature}
                           </li>)}
                         {item.features.length > 3 && <li className="text-sm text-cosmic-stellar-gold">
-                            +{item.features.length - 3} autres fonctionnalités
+                            +{item.features.length - 3} {t('servicesProducts.moreFeatures')}
                           </li>}
                       </ul>
                     </div>}
@@ -136,7 +138,7 @@ const ServicesProducts = () => {
                   <div className="mt-auto">
                     <div className="flex flex-col mb-4">
                       <div className="text-2xl font-bold cosmic-text">
-                        {item.name.includes('Livre Qui suis-je') ? 'Exclusivement disponible pour les inscrits au programme Perception.' : item.price === 0 ? 'Gratuit' : `À partir de ${item.price} DA`}
+                        {item.name.includes('Livre Qui suis-je') ? t('servicesProducts.bookExclusive') : item.price === 0 ? t('servicesProducts.free') : `${t('servicesProducts.from')} ${item.price} DA`}
                       </div>
                     </div>
 
@@ -151,15 +153,15 @@ const ServicesProducts = () => {
           <Card className="bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 border-cosmic-stellar-gold/30 max-w-2xl mx-auto">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold cosmic-text mb-4">
-                Besoin d'un service personnalisé ?
+                {t('servicesProducts.customService')}
               </h3>
               <p className="text-muted-foreground mb-6">
-                Chaque parcours est unique. Contactez-moi pour créer une solution sur mesure qui correspond parfaitement à vos besoins et objectifs.
+                {t('servicesProducts.customServiceText')}
               </p>
               <Button variant="stellar" size="lg" onClick={() => handleContact({
               name: 'Service personnalisé'
             } as ServiceProduct)}>
-                Discutons de votre projet
+                {t('servicesProducts.discussProject')}
               </Button>
             </CardContent>
           </Card>

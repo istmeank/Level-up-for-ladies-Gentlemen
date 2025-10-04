@@ -1,11 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.png";
+import { useTranslation } from "react-i18next";
+
 const WhoAmI = () => {
+  const { t } = useTranslation();
+  
   return <section className="py-20 px-6 bg-gradient-to-br from-cosmic-deep-space via-background to-cosmic-deep-space">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
-            Qui suis-je ?
+            {t('whoAmI.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
         </div>
@@ -20,7 +24,7 @@ const WhoAmI = () => {
                 <div className="w-4 h-4 bg-cosmic-purple-pink rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-purple-pink))] relative">
                   <div className="absolute inset-0 bg-cosmic-purple-pink rounded-full animate-ping"></div>
                 </div>
-                <span className="text-xs font-semibold text-cosmic-purple-pink whitespace-nowrap">❤️ Bienveillance</span>
+                <span className="text-xs font-semibold text-cosmic-purple-pink whitespace-nowrap">{t('whoAmI.kindness')}</span>
               </div>
               
               {/* Étoile Souveraineté - Est */}
@@ -28,7 +32,7 @@ const WhoAmI = () => {
                 <div className="w-4 h-4 bg-cosmic-stellar-gold rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold))] relative">
                   <div className="absolute inset-0 bg-cosmic-stellar-gold rounded-full animate-ping animation-delay-1000"></div>
                 </div>
-                <span className="text-xs font-semibold text-cosmic-stellar-gold whitespace-nowrap">👑 Souveraineté</span>
+                <span className="text-xs font-semibold text-cosmic-stellar-gold whitespace-nowrap">{t('whoAmI.sovereignty')}</span>
               </div>
               
               {/* Étoile Acceptation - Sud */}
@@ -36,7 +40,7 @@ const WhoAmI = () => {
                 <div className="w-4 h-4 bg-cosmic-nebula-green rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-nebula-green))] relative">
                   <div className="absolute inset-0 bg-cosmic-nebula-green rounded-full animate-ping animation-delay-2000"></div>
                 </div>
-                <span className="text-xs font-semibold text-cosmic-nebula-green whitespace-nowrap">🙏 Acceptation</span>
+                <span className="text-xs font-semibold text-cosmic-nebula-green whitespace-nowrap">{t('whoAmI.acceptance')}</span>
               </div>
               
               {/* Étoile Sagesse - Ouest */}
@@ -44,7 +48,7 @@ const WhoAmI = () => {
                 <div className="w-4 h-4 bg-cosmic-nebula-purple rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-nebula-purple))] relative">
                   <div className="absolute inset-0 bg-cosmic-nebula-purple rounded-full animate-ping animation-delay-3000"></div>
                 </div>
-                <span className="text-xs font-semibold text-cosmic-nebula-purple whitespace-nowrap">🧠 Sagesse</span>
+                <span className="text-xs font-semibold text-cosmic-nebula-purple whitespace-nowrap">{t('whoAmI.wisdom')}</span>
               </div>
             </div>
 
@@ -75,9 +79,9 @@ const WhoAmI = () => {
         {/* Titre honorifique */}
         <div className="text-center mb-12">
           <p className="text-2xl text-cosmic-stellar-gold font-brush">
-            "Le sage Roi des nuages"
+            {t('whoAmI.honorific')}
           </p>
-          <p className="text-sm text-muted-foreground mt-2">Comme m'appellent mes Padawans</p>
+          <p className="text-sm text-muted-foreground mt-2">{t('whoAmI.subtitle')}</p>
         </div>
 
         {/* Contenu - en bas en colonnes */}
@@ -86,8 +90,8 @@ const WhoAmI = () => {
           <div className="space-y-6 relative">
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-6">Mon Parcours</h3>
-                <p className="text-muted-foreground leading-relaxed">Fort de plusieurs années d'expérience dans la Psychothérapie et le Développement personnel et professionel, j'accompagne les Hommes et Les Femmes de valeur dans leur quête d'excellence. Ma mission est de vous aider à révéler votre potentiel et à atteindre vos objectifs les plus ambitieux.</p>
+                <h3 className="text-2xl font-bold cosmic-text mb-6">{t('whoAmI.journey')}</h3>
+                <p className="text-muted-foreground leading-relaxed">{t('whoAmI.journeyText')}</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-4 right-4 w-1 h-1 bg-cosmic-stellar-gold rounded-full animate-pulse"></div>
@@ -99,8 +103,8 @@ const WhoAmI = () => {
           <div className="space-y-6 relative">
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-6">Ma Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">Je crois fermement que chaque personne possède un potentiel extraordinaire. Mon approche combine méthodes Psychologiques et Musulmanes basées sur le Coran et mon propre système de valeur, pour créer des transformations durables et significatives dans votre vie personnelle et professionnelle.</p>
+                <h3 className="text-2xl font-bold cosmic-text mb-6">{t('whoAmI.visionTitle')}</h3>
+                <p className="text-muted-foreground leading-relaxed">{t('whoAmI.visionText')}</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-6 left-4 w-1 h-1 bg-cosmic-purple-pink rounded-full animate-pulse animation-delay-1000"></div>
