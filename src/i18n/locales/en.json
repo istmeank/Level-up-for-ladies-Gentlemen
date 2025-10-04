@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "mission": "Mission",
+    "whoAmI": "Who Am I",
+    "formations": "Training",
+    "servicesProducts": "Services & Products",
+    "contact": "Contact",
+    "login": "Sign In"
+  },
+  "hero": {
+    "signup": "Sign Up"
+  },
+  "about": {
+    "title": "The Cosmic Awakening",
+    "foundedBy": "Founded by Abdenacer Maredj (ANK)",
+    "subtitle": "Psychotherapist, Professional Closer & Business and Branding Expert",
+    "vision": "A secret garden for",
+    "women": "women",
+    "and": "and",
+    "men": "men",
+    "highValue": "of high value",
+    "description": "LEVEL UP is above all fertile ground made up of a multitude of precious clays. You are this fertile ground that Allah created, the foundation of every society with the power to select, carry life and educate it alongside true souls.",
+    "mission": "Mission",
+    "missionText": "Offer men and women of value the opportunity to awaken, progress and come together to create a very high-value healthy society",
+    "visionTitle": "Vision",
+    "womenVision": "Women",
+    "womenVisionText": ", you carry within you the sacred power of selection, creation and education. You are the secret garden that every true man aspires to protect.",
+    "menVision": "Men",
+    "menVisionText": ", your mission is to guide, protect and stabilize. You are the star in the night that every authentic woman wishes to have by her side.\n\nTogether, our common goal is to offer Allah sincere devotion and thank Him for His countless blessings.",
+    "padawan": "To our Padawans",
+    "padawanText": "You are this blessed land that Allah created, the foundation of every flourishing society.",
+    "discoverPotential": "Discover Your Potential"
+  },
+  "contact": {
+    "title": "Ready for Elevation?",
+    "subtitle": "The universe conspires for your success. There is only one step left to enter your new reality.",
+    "transformed": "Souls Transformed",
+    "satisfaction": "Galactic Satisfaction",
+    "stars": "Average Stars",
+    "joinElite": "🚀 Join the Cosmic Elite",
+    "newsletter": "📧 Stellar Newsletter",
+    "chat": "💬 Quantum Chat",
+    "guarantee": "✨ 30-Day Cosmic Transformation Guarantee",
+    "guaranteeText": "If you don't experience a notable energy elevation, we will fully refund your investment.",
+    "location": "Universal Spiritual Dimension",
+    "email": "contact@levelup-cosmic.com",
+    "availability": "Available 24/7 in the ether"
+  },
+  "footer": {
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "copyright": "© 2024 LEVEL UP. All rights reserved in this dimension and beyond."
+  }
+}

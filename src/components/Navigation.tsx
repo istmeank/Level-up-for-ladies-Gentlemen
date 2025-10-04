@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import logoLevelUp from "@/assets/logo-level-up-new.png";
 import { useNavigate } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-cosmic-deep-space/80 backdrop-blur-lg border-b border-cosmic-stellar-gold/20">
       <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
@@ -21,19 +23,19 @@ const Navigation = () => {
         {/* Navigation links - cachés sur mobile */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="#about" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
-            Mission
+            {t('nav.mission')}
           </a>
           <a href="#who-am-i" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
-            Qui suis-je
+            {t('nav.whoAmI')}
           </a>
           <a href="#formations" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
-            Formations
+            {t('nav.formations')}
           </a>
           <a href="#services-products" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
-            Services & Produits
+            {t('nav.servicesProducts')}
           </a>
           <a href="#contact" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
-            Contact
+            {t('nav.contact')}
           </a>
         </div>
 
@@ -47,7 +49,7 @@ const Navigation = () => {
             size="sm"
             onClick={() => navigate("/auth")}
           >
-            Se connecter
+            {t('nav.login')}
           </Button>
         </div>
       </div>

@@ -3,9 +3,11 @@ import heroBackground from "@/assets/level-up-background.svg";
 import forLadiesGentlemenLogo from "@/assets/for-ladies-gentlemen-logo.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [showCosmicEffect, setShowCosmicEffect] = useState(false);
   return <section className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden" style={{
     backgroundImage: `url(${heroBackground})`,
@@ -119,7 +121,7 @@ const Hero = () => {
             className="bg-gradient-to-r from-cosmic-nebula-purple via-cosmic-purple-pink to-cosmic-royal-blue hover:from-cosmic-nebula-green hover:via-cosmic-stellar-gold hover:to-cosmic-purple-pink text-cosmic-star-white font-bold px-12 py-5 text-lg -mt-10 hover:scale-110 transition-all duration-500 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple)/0.6),0_0_60px_hsl(var(--cosmic-purple-pink)/0.4)] hover:shadow-[0_0_60px_hsl(var(--cosmic-nebula-green)/0.8),0_0_80px_hsl(var(--cosmic-stellar-gold)/0.6)] border border-cosmic-star-white/20 hover:border-cosmic-stellar-gold/50 rounded-xl backdrop-blur-sm"
             onClick={() => navigate('/auth')}
           >
-            S'inscrire
+            {t('hero.signup')}
           </Button>
         </div>
       </div>

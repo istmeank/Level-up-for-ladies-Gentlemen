@@ -8,8 +8,10 @@ import Services from "./Services";
 import Contact from "./Contact";
 import Testimonials from "./Testimonials";
 import logoLevelUp from "@/assets/logo-level-up-new.png";
+import { useTranslation } from "react-i18next";
 
 const CosmicLanding = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -49,18 +51,18 @@ const CosmicLanding = () => {
           
           <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
             <a href="#" className="text-cosmic-star-white/60 hover:text-cosmic-stellar-gold transition-colors">
-              Mentions Légales
+              {t('footer.legal')}
             </a>
             <a href="#" className="text-cosmic-star-white/60 hover:text-cosmic-stellar-gold transition-colors">
-              Politique de Confidentialité
+              {t('footer.privacy')}
             </a>
             <a href="#" className="text-cosmic-star-white/60 hover:text-cosmic-stellar-gold transition-colors">
-              CGV
+              {t('footer.terms')}
             </a>
           </div>
           
           <div className="text-cosmic-star-white/40 text-sm">
-            © 2024 LEVEL UP. Tous droits réservés dans cette dimension et les suivantes.
+            {t('footer.copyright')}
           </div>
         </div>
       </footer>

@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "mission": "Mission",
+    "whoAmI": "Qui suis-je",
+    "formations": "Formations",
+    "servicesProducts": "Services & Produits",
+    "contact": "Contact",
+    "login": "Se connecter"
+  },
+  "hero": {
+    "signup": "S'inscrire"
+  },
+  "about": {
+    "title": "L'Éveil Cosmique",
+    "foundedBy": "Fondé par Abdenacer Maredj (ANK)",
+    "subtitle": "Psychothérapeute, Closer Professionnel & Expert en Business et Branding",
+    "vision": "Un jardin secret pour",
+    "women": "femmes",
+    "and": "et",
+    "men": "hommes",
+    "highValue": "de haute valeur",
+    "description": "LEVEL UP est avant tout une terre fertile constituée d'une multitude d'argiles précieuses. Vous êtes cette terre fertile qu'Allah a créée, la base de toute société avec le pouvoir de sélectionner, porter la vie et l'éduquer aux côtés d'âmes véritables.",
+    "mission": "Mission",
+    "missionText": "Offrir aux Hommes et aux femmes de valeur l'opportunité de s'éveiller, progresser et de se réunir pour créer une société saine de très haute valeur",
+    "visionTitle": "Vision",
+    "womenVision": "Femmes",
+    "womenVisionText": ", vous portez en vous le pouvoir sacré de la sélection, de la création et de l'éducation. Vous êtes le jardin secret que tout homme véritable aspire à protéger.",
+    "menVision": "Hommes",
+    "menVisionText": ", votre mission est de guider, protéger et stabiliser. Vous êtes l'étoile dans la nuit que toute femme authentique souhaite avoir à ses côtés.\n\nEnsemble, notre objectif commun est d'offrir à Allah une dévotion sincère et de Le remercier pour Ses innombrables bienfaits.",
+    "padawan": "À nos Padawan's",
+    "padawanText": "Vous êtes cette terre bénie qu'Allah a créée, fondement de toute société florissante.",
+    "discoverPotential": "Découvrir ton Potentiel"
+  },
+  "contact": {
+    "title": "Prêt(e) pour l'Élévation ?",
+    "subtitle": "L'univers conspire pour ta réussite. Il ne reste qu'un pas à franchir pour entrer dans ta nouvelle réalité.",
+    "transformed": "Âmes Transformées",
+    "satisfaction": "Satisfaction Galactique",
+    "stars": "Étoiles Moyennes",
+    "joinElite": "🚀 Rejoindre l'Élite Cosmique",
+    "newsletter": "📧 Newsletter Stellaire",
+    "chat": "💬 Chat Quantique",
+    "guarantee": "✨ Garantie Transformation Cosmique 30 jours",
+    "guaranteeText": "Si tu n'expérimentes pas une élévation énergétique notable, nous te remboursons intégralement ton investissement.",
+    "location": "Dimension Spirituelle Universelle",
+    "email": "contact@levelup-cosmic.com",
+    "availability": "Disponible 24/7 dans l'éther"
+  },
+  "footer": {
+    "legal": "Mentions Légales",
+    "privacy": "Politique de Confidentialité",
+    "terms": "CGV",
+    "copyright": "© 2024 LEVEL UP. Tous droits réservés dans cette dimension et les suivantes."
+  }
+}

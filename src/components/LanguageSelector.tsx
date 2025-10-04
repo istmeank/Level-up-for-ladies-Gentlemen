@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Languages, ChevronDown } from "lucide-react";
 import { FrenchFlag, USFlag, AlgerianFlag } from "./FlagIcons";
+import { useTranslation } from "react-i18next";
 
 interface Language {
   code: string;
@@ -22,12 +23,14 @@ const languages: Language[] = [
 ];
 
 const LanguageSelector = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(languages[0]);
+  const { i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(
+    languages.find(lang => lang.code === i18n.language) || languages[0]
+  );
 
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language);
-    // Here you would implement actual language switching logic
-    console.log('Language changed to:', language.code);
+    i18n.changeLanguage(language.code);
   };
 
   return (
