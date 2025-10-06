@@ -94,9 +94,9 @@ const ServicesProducts = () => {
 
         {filteredItems.length === 0 ? <div className="text-center py-16">
             <div className="text-6xl mb-4">🚀</div>
-            <h3 className="text-2xl font-bold cosmic-text mb-4">Nouveaux services en préparation</h3>
+            <h3 className="text-2xl font-bold cosmic-text mb-4">{t('servicesProducts.comingSoonTitle')}</h3>
             <p className="text-muted-foreground">
-              De nouveaux services et produits exclusifs arrivent bientôt !
+              {t('servicesProducts.comingSoonDescription')}
             </p>
           </div> : <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map(item => <Card key={item.id} className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group flex flex-col">
@@ -107,7 +107,9 @@ const ServicesProducts = () => {
                   <div className="absolute top-4 right-4">
                     <Badge className={getTypeColor(item.type)}>
                       {getTypeIcon(item.type)}
-                      <span className="ml-1 capitalize">{item.type}</span>
+                      <span className="ml-1 capitalize">
+                        {t(`servicesProducts.type${item.type === 'service' ? 'Service' : 'Product'}`)}
+                      </span>
                     </Badge>
                   </div>
                 </div>
@@ -159,7 +161,7 @@ const ServicesProducts = () => {
                 {t('servicesProducts.customServiceText')}
               </p>
               <Button variant="stellar" size="lg" onClick={() => handleContact({
-              name: 'Service personnalisé'
+              name: t('servicesProducts.customServiceName')
             } as ServiceProduct)}>
                 {t('servicesProducts.discussProject')}
               </Button>

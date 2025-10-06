@@ -74,7 +74,17 @@
     "acquired": "Acquired",
     "free": "Free",
     "minutes": "minutes",
-    "buyNow": "Buy Now"
+    "buyNow": "Buy Now",
+    "purchaseSuccess": "Training purchased successfully! A confirmation email will be sent.",
+    "purchaseError": "Error purchasing training",
+    "comingSoonTitle": "New training in preparation",
+    "comingSoonDescription": "New exclusive training coming soon. Stay tuned!",
+    "sampleDescription": "Learn to build long-lasting relationships with this training that will teach you the solid foundations of a successful marriage",
+    "levels": {
+      "débutant": "Beginner",
+      "intermédiaire": "Intermediate",
+      "avancé": "Advanced"
+    }
   },
   "services": {
     "title": "Our Elevation Portals",
@@ -114,12 +124,37 @@
     "contactMe": "Contact me to learn more about",
     "customService": "Need a custom service?",
     "customServiceText": "Every journey is unique. Contact me to create a tailor-made solution that perfectly matches your needs and goals.",
-    "discussProject": "Let's discuss your project"
+    "discussProject": "Let's discuss your project",
+    "comingSoonTitle": "New services in preparation",
+    "comingSoonDescription": "New exclusive services and products coming soon!",
+    "typeService": "Service",
+    "typeProduct": "Product",
+    "customServiceName": "Custom service"
   },
   "testimonials": {
     "title": "Testimonials",
     "subtitle": "Discover the transformations experienced by our participants",
     "perceptionProgram": "Perception Program",
-    "personalTestimony": "Personal Testimony"
+    "personalTestimony": "Personal Testimony",
+    "items": [
+      {
+        "id": 1,
+        "content": "I deeply explored my nature and consciousness. Through this exploration, I felt and understood that I am truly a conscious human being. My emotions, my experiences and my ability to grow and learn are all evidence of my inner consciousness. This awareness has opened me to growth, authenticity and the quest for personal fulfillment as an individual and person conscious of my own existence.",
+        "author": "Linda",
+        "type": "perceptionProgram"
+      },
+      {
+        "id": 2,
+        "content": "I am OKEBANE nour el houda and I participated in the perception program (January - May), here is my testimony. When I started this program, I didn't know what to expect. It was an important step in my life that I will never regret. This program truly transformed my life, especially my self-confidence and self-esteem regarding my traumas as well. I learned a lot about myself. We discovered many values and shared enriching moments. We really had so much fun. I highly recommend this program, encouraging you to invest fully. You will see how much your life can change for the better, insha'Allah ❤️",
+        "author": "Noor el Houda",
+        "type": "perceptionProgram"
+      },
+      {
+        "id": 3,
+        "content": "I want to write a message to thank Nacer Maredj. I want to express my deep gratitude for your exceptional professionalism and dedication. Your support during my period of depression was a light in the darkness. Thank you from the bottom of my heart for your precious help. جزاك الله",
+        "author": "Faïza",
+        "type": "personalTestimony"
+      }
+    ]
   }
 }

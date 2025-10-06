@@ -67,13 +67,13 @@ const Formations = () => {
   const handlePurchase = async (formation: Formation) => {
     try {
       // Simuler un achat direct sans authentification requise
-      toast.success(`Formation "${formation.title}" achetée avec succès ! Un email de confirmation sera envoyé.`);
+      toast.success(`${t('formations.purchaseSuccess')} "${formation.title}"`);
 
       // Ici vous pourriez rediriger vers un système de paiement comme Stripe
       // ou ouvrir une modal de paiement
     } catch (error) {
       console.error('Error purchasing formation:', error);
-      toast.error('Erreur lors de l\'achat de la formation');
+      toast.error(t('formations.purchaseError'));
     }
   };
   const isPurchased = (formationId: string) => {
@@ -110,9 +110,9 @@ const Formations = () => {
 
         {formations.length === 0 ? <div className="text-center py-16">
             <div className="text-6xl mb-4">🎓</div>
-            <h3 className="text-2xl font-bold cosmic-text mb-4">Nouvelles formations en préparation</h3>
+            <h3 className="text-2xl font-bold cosmic-text mb-4">{t('formations.comingSoonTitle')}</h3>
             <p className="text-muted-foreground">
-              De nouvelles formations exclusives arrivent bientôt. Restez connectés !
+              {t('formations.comingSoonDescription')}
             </p>
           </div> : <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {formations.map(formation => <Card key={formation.id} className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group">
@@ -122,7 +122,7 @@ const Formations = () => {
                     </div>}
                   <div className="absolute top-4 right-4">
                     <Badge className={getLevelColor(formation.level)}>
-                      {formation.level}
+                      {t(`formations.levels.${formation.level}` as any) || formation.level}
                     </Badge>
                   </div>
                   {isPurchased(formation.id) && <div className="absolute top-4 left-4">
@@ -143,7 +143,7 @@ const Formations = () => {
 
                 <CardContent className="flex-1 flex flex-col">
                   <p className="text-muted-foreground mb-6 flex-1">
-                    apprenez à construire des relations qui durent sur le long terme grâce à cette formation qui vous apprendra les bases solides d'un mariage réussi
+                    {formation.description || t('formations.sampleDescription')}
                   </p>
 
                   <div className="flex items-center justify-between">

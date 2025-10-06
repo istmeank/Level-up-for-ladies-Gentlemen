@@ -74,7 +74,17 @@
     "acquired": "Acquise",
     "free": "Gratuit",
     "minutes": "minutes",
-    "buyNow": "Acheter maintenant"
+    "buyNow": "Acheter maintenant",
+    "purchaseSuccess": "Formation achetée avec succès ! Un email de confirmation sera envoyé.",
+    "purchaseError": "Erreur lors de l'achat de la formation",
+    "comingSoonTitle": "Nouvelles formations en préparation",
+    "comingSoonDescription": "De nouvelles formations exclusives arrivent bientôt. Restez connectés !",
+    "sampleDescription": "Apprenez à construire des relations qui durent sur le long terme grâce à cette formation qui vous apprendra les bases solides d'un mariage réussi",
+    "levels": {
+      "débutant": "Débutant",
+      "intermédiaire": "Intermédiaire",
+      "avancé": "Avancé"
+    }
   },
   "services": {
     "title": "Nos Portails d'Élévation",
@@ -114,12 +124,37 @@
     "contactMe": "Contactez-moi pour en savoir plus sur",
     "customService": "Besoin d'un service personnalisé ?",
     "customServiceText": "Chaque parcours est unique. Contactez-moi pour créer une solution sur mesure qui correspond parfaitement à vos besoins et objectifs.",
-    "discussProject": "Discutons de votre projet"
+    "discussProject": "Discutons de votre projet",
+    "comingSoonTitle": "Nouveaux services en préparation",
+    "comingSoonDescription": "De nouveaux services et produits exclusifs arrivent bientôt !",
+    "typeService": "Service",
+    "typeProduct": "Produit",
+    "customServiceName": "Service personnalisé"
   },
   "testimonials": {
     "title": "Témoignages",
     "subtitle": "Découvrez les transformations vécues par nos participants",
     "perceptionProgram": "Programme Perception",
-    "personalTestimony": "Témoignage Personnel"
+    "personalTestimony": "Témoignage Personnel",
+    "items": [
+      {
+        "id": 1,
+        "content": "J'ai profondément exploré ma nature et ma conscience. À travers cette exploration, j'ai ressenti et compris que je suis véritablement un être humain conscient. Mes émotions, mes expériences et ma capacité à grandir et à apprendre sont autant de preuves de ma conscience intérieure. Cette prise de conscience m'a ouvert à l'épanouissement, à l'authenticité et à la quête de réalisation personnelle en tant qu'individu et personne consciente de ma propre existence.",
+        "author": "Linda",
+        "type": "perceptionProgram"
+      },
+      {
+        "id": 2,
+        "content": "Je suis OKEBANE nour el houda j'ai participé au programme perception (janvier - mai) voici mon témoignage. Lorsque j'ai entamé ce programme, je ne savais pas à quoi m'attendre. C'était une étape importante dans ma vie que je ne regretterai jamais. Ce programme a véritablement transformé ma vie, en particulier ma confiance en moi et mon estime de moi par rapport à mes traumas aussi). Témoignage appris sur moi-même. On a découvert, nombreuses valeurs et partagé des moments enrichissants. we really had so much fun. Je recommande vivement ce programme, en vous encourageant à vous investir pleinement. Vous constaterez à quel point votre vie peut changer pour le mieux, insha'Allah ❤️",
+        "author": "Noor el Houda",
+        "type": "perceptionProgram"
+      },
+      {
+        "id": 3,
+        "content": "J'ai envie d'écrire un message pour remercier Nacer Maredj. Je tiens à t'exprimer ma profonde gratitude pour ton professionnalisme et ton dévouement exceptionnels. Ton soutien pendant ma période de dépression a été une lumière dans l'obscurité. Merci de tout cœur pour ton aide précieuse. جزاك الله",
+        "author": "Faïza",
+        "type": "personalTestimony"
+      }
+    ]
   }
 }

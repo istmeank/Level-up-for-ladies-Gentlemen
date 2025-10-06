@@ -4,26 +4,17 @@ import { useTranslation } from "react-i18next";
 const Testimonials = () => {
   const { t } = useTranslation();
   
-  const testimonials = [
-    {
-      id: 1,
-      content: "J'ai profondément exploré ma nature et ma conscience. À travers cette exploration, j'ai ressenti et compris que je suis véritablement un être humain conscient. Mes émotions, mes expériences et ma capacité à grandir et à apprendre sont autant de preuves de ma conscience intérieure. Cette prise de conscience m'a ouvert à l'épanouissement, à l'authenticité et à la quête de réalisation personnelle en tant qu'individu et personne consciente de ma propre existence.",
-      author: "Linda",
-      type: t('testimonials.perceptionProgram')
-    },
-    {
-      id: 2,
-      content: "Je suis OKEBANE nour el houda j'ai participé au programme perception (janvier - mai) voici mon témoignage. Lorsque j'ai entamé ce programme, je ne savais pas à quoi m'attendre. C'était une étape importante dans ma vie que je ne regretterai jamais. Ce programme a véritablement transformé ma vie, en particulier ma confiance en moi et mon estime de moi par rapport à mes traumas aussi). Témoignage appris sur moi-même. On a découvert, nombreuses valeurs et partagé des moments enrichissants. we really had so much fun. Je recommande vivement ce programme, en vous encourageant à vous investir pleinement. Vous constaterez à quel point votre vie peut changer pour le mieux, insha'Allah ❤️",
-      author: "Noor el Houda",
-      type: t('testimonials.perceptionProgram')
-    },
-    {
-      id: 3,
-      content: "J'ai envie d'écrire un message pour remercier Nacer Maredj. Je tiens à t'exprimer ma profonde gratitude pour ton professionnalisme et ton dévouement exceptionnels. Ton soutien pendant ma période de dépression a été une lumière dans l'obscurité. Merci de tout cœur pour ton aide précieuse. جزاك الله",
-      author: "Faïza",
-      type: t('testimonials.personalTestimony')
-    }
-  ];
+  const testimonialsData = t('testimonials.items', { returnObjects: true }) as Array<{
+    id: number;
+    content: string;
+    author: string;
+    type: string;
+  }>;
+
+  const testimonials = testimonialsData.map(item => ({
+    ...item,
+    type: t(`testimonials.${item.type}`)
+  }));
 
   return (
     <section className="py-24 bg-gradient-to-b from-cosmic-deep-space/30 to-cosmic-void/50">
