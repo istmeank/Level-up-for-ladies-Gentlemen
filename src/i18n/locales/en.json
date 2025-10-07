@@ -156,5 +156,84 @@
         "type": "personalTestimony"
       }
     ]
+  },
+  "admin": {
+    "checkingPermissions": "Checking permissions...",
+    "accessDenied": "Access Denied",
+    "accessDeniedMessage": "Only administrators can access this page.",
+    "accessDeniedContact": "If you think this is an error, contact the system administrator.",
+    "createFormation": "Create a new training",
+    "formationTitle": "Training title",
+    "price": "Price (DA)",
+    "duration": "Duration (minutes)",
+    "level": "Level",
+    "description": "Description",
+    "videoUpload": "Training video",
+    "thumbnailUpload": "Thumbnail",
+    "dragDropVideo": "Drag and drop your video or click to browse",
+    "dragDropImage": "Cover image for your training",
+    "chooseVideo": "Choose a video",
+    "chooseImage": "Choose an image",
+    "creating": "Creating...",
+    "createButton": "Create training",
+    "saveDraft": "Save as draft",
+    "titlePlaceholder": "E.g.: Master the art of negotiation",
+    "pricePlaceholder": "0.00",
+    "durationPlaceholder": "60",
+    "descriptionPlaceholder": "Describe your training, its objectives and what participants will learn...",
+    "levels": {
+      "débutant": "Beginner",
+      "intermédiaire": "Intermediate",
+      "avancé": "Advanced"
+    },
+    "errors": {
+      "permissionCheck": "Error checking permissions",
+      "accessDenied": "Access denied. Only administrators can create training.",
+      "invalidData": "Invalid form data",
+      "mustBeLoggedIn": "You must be logged in",
+      "creationError": "Error creating training",
+      "videoUploadDenied": "Access denied. Only administrators can upload videos.",
+      "thumbnailUploadDenied": "Access denied. Only administrators can upload thumbnails.",
+      "invalidVideoFormat": "Invalid video file format",
+      "invalidImageFormat": "Invalid image file format",
+      "videoUploadError": "Error uploading video",
+      "thumbnailUploadError": "Error uploading thumbnail"
+    },
+    "success": {
+      "formationCreated": "Training created successfully!",
+      "videoUploaded": "Video uploaded successfully!",
+      "thumbnailUploaded": "Thumbnail uploaded successfully!"
+    }
+  },
+  "auth": {
+    "title": "LEVEL UP",
+    "subtitle": "Join the cosmic universe",
+    "authentication": "Authentication",
+    "createOrLogin": "Create your account or log in to your space",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "email": "Email",
+    "password": "Password",
+    "loading": "Loading...",
+    "or": "Or",
+    "signUpWithGoogle": "Sign up with Google",
+    "signInWithGoogle": "Sign in with Google",
+    "backToHome": "Back to Home",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "••••••••",
+    "errors": {
+      "invalidData": "Invalid data",
+      "userExists": "An account already exists with this email address. Try logging in.",
+      "signUpError": "Error during registration. Please try again.",
+      "invalidCredentials": "Invalid credentials. Check your email and password.",
+      "signInError": "Login error. Please try again.",
+      "google403": "Error 403: Google configuration required. Check authorized URLs in Google Cloud Console.",
+      "googleRedirect": "Redirect error. Check URL configuration in Supabase.",
+      "googleOAuth": "OAuth error. Check that Google is enabled in Supabase Auth.",
+      "googleError": "Error during Google login. Please try again."
+    },
+    "success": {
+      "checkEmail": "Check your email to confirm your registration!"
+    }
   }
 }

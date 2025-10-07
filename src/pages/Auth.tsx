@@ -9,8 +9,10 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { User, Session } from "@supabase/supabase-js";
 import { toast } from "sonner";
 import { authSchema, type AuthFormData } from "@/lib/validation";
+import { useTranslation } from "react-i18next";
 
 const Auth = () => {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(false);
@@ -52,7 +54,7 @@ const Auth = () => {
     try {
       authSchema.parse({ email, password });
     } catch (error: any) {
-      toast.error(error.errors?.[0]?.message || "Données invalides");
+      toast.error(error.errors?.[0]?.message || t('auth.errors.invalidData'));
       return;
     }
 
@@ -71,12 +73,12 @@ const Auth = () => {
     
     if (error) {
       if (error.message.includes("User already registered")) {
-        toast.error("Un compte existe déjà avec cette adresse email. Essayez de vous connecter.");
+        toast.error(t('auth.errors.userExists'));
       } else {
-        toast.error("Erreur lors de l'inscription. Veuillez réessayer.");
+        toast.error(t('auth.errors.signUpError'));
       }
     } else {
-      toast.success("Vérifiez votre email pour confirmer votre inscription !");
+      toast.success(t('auth.success.checkEmail'));
     }
   };
 
@@ -85,7 +87,7 @@ const Auth = () => {
     try {
       authSchema.parse({ email, password });
     } catch (error: any) {
-      toast.error(error.errors?.[0]?.message || "Données invalides");
+      toast.error(error.errors?.[0]?.message || t('auth.errors.invalidData'));
       return;
     }
 
@@ -100,9 +102,9 @@ const Auth = () => {
     
     if (error) {
       if (error.message.includes("Invalid login credentials")) {
-        toast.error("Identifiants invalides. Vérifiez votre email et mot de passe.");
+        toast.error(t('auth.errors.invalidCredentials'));
       } else {
-        toast.error("Erreur de connexion. Veuillez réessayer.");
+        toast.error(t('auth.errors.signInError'));
       }
     }
   };
@@ -120,15 +122,14 @@ const Auth = () => {
     setLoading(false);
     
     if (error) {
-      // Provide specific error messages based on error type without exposing sensitive details
       if (error.message.includes('403') || error.message.includes('access')) {
-        toast.error("Erreur 403: Configuration Google requise. Vérifiez les URLs autorisées dans Google Cloud Console.");
+        toast.error(t('auth.errors.google403'));
       } else if (error.message.includes('redirect')) {
-        toast.error("Erreur de redirection. Vérifiez la configuration des URLs dans Supabase.");
+        toast.error(t('auth.errors.googleRedirect'));
       } else if (error.message.includes('oauth')) {
-        toast.error("Erreur OAuth. Vérifiez que Google est activé dans Supabase Auth.");
+        toast.error(t('auth.errors.googleOAuth'));
       } else {
-        toast.error("Erreur lors de la connexion Google. Veuillez réessayer.");
+        toast.error(t('auth.errors.googleError'));
       }
     }
   };
@@ -149,11 +150,11 @@ const Auth = () => {
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('auth.email')}</Label>
           <Input
             id="email"
             type="email"
-            placeholder="votre@email.com"
+            placeholder={t('auth.emailPlaceholder')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -161,11 +162,11 @@ const Auth = () => {
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Mot de passe</Label>
+          <Label htmlFor="password">{t('auth.password')}</Label>
           <Input
             id="password"
             type="password"
-            placeholder="••••••••"
+            placeholder={t('auth.passwordPlaceholder')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -178,7 +179,7 @@ const Auth = () => {
           className="w-full"
           variant={mode === "signup" ? "darkCosmic" : "cosmic"}
         >
-          {loading ? "Chargement..." : mode === "signup" ? "S'inscrire" : "Se connecter"}
+          {loading ? t('auth.loading') : mode === "signup" ? t('auth.signUp') : t('auth.signIn')}
         </Button>
         
         <div className="relative my-4">
@@ -186,7 +187,7 @@ const Auth = () => {
             <span className="w-full border-t border-cosmic-stellar-gold/20" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-card px-2 text-muted-foreground">Ou</span>
+            <span className="bg-card px-2 text-muted-foreground">{t('auth.or')}</span>
           </div>
         </div>
         
@@ -203,7 +204,7 @@ const Auth = () => {
             <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
             <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
           </svg>
-          {loading ? "Chargement..." : `${mode === "signup" ? "S'inscrire" : "Se connecter"} avec Google`}
+          {loading ? t('auth.loading') : mode === "signup" ? t('auth.signUpWithGoogle') : t('auth.signInWithGoogle')}
         </Button>
       </form>
     );
@@ -218,22 +219,22 @@ const Auth = () => {
             alt="LEVEL UP" 
             className="w-16 h-16 mx-auto mb-4 filter drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold)/0.8)]"
           />
-          <h1 className="text-3xl font-bold cosmic-text mb-2">LEVEL UP</h1>
-          <p className="text-muted-foreground">Rejoignez l'univers cosmique</p>
+          <h1 className="text-3xl font-bold cosmic-text mb-2">{t('auth.title')}</h1>
+          <p className="text-muted-foreground">{t('auth.subtitle')}</p>
         </div>
 
         <Card className="bg-card/80 backdrop-blur-sm border-cosmic-stellar-gold/20">
           <CardHeader className="text-center">
-            <CardTitle className="cosmic-text">Authentification</CardTitle>
+            <CardTitle className="cosmic-text">{t('auth.authentication')}</CardTitle>
             <CardDescription>
-              Créez votre compte ou connectez-vous à votre espace
+              {t('auth.createOrLogin')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue={defaultTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6">
-                <TabsTrigger value="signup">S'inscrire</TabsTrigger>
-                <TabsTrigger value="signin">Se connecter</TabsTrigger>
+                <TabsTrigger value="signup">{t('auth.signUp')}</TabsTrigger>
+                <TabsTrigger value="signin">{t('auth.signIn')}</TabsTrigger>
               </TabsList>
               
               <TabsContent value="signup">
@@ -253,7 +254,7 @@ const Auth = () => {
             onClick={() => navigate("/")}
             className="text-cosmic-stellar-gold hover:text-cosmic-stellar-gold/80"
           >
-            ← Retour à l'accueil
+            ← {t('auth.backToHome')}
           </Button>
         </div>
       </div>

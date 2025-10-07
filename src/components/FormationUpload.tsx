@@ -9,8 +9,10 @@ import { Upload, Video, Image, Shield } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { formationSchema, videoFileSchema, imageFileSchema, type FormationFormData } from "@/lib/validation";
+import { useTranslation } from "react-i18next";
 
 const FormationUpload = () => {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [checkingPermissions, setCheckingPermissions] = useState(true);
@@ -42,7 +44,7 @@ const FormationUpload = () => {
 
       if (error) {
         console.error('Error fetching user role:', error);
-        toast.error('Erreur lors de la vérification des permissions');
+        toast.error(t('admin.errors.permissionCheck'));
         setCheckingPermissions(false);
         return;
       }
@@ -59,7 +61,7 @@ const FormationUpload = () => {
     e.preventDefault();
     
     if (!isAdmin) {
-      toast.error('Accès refusé. Seuls les administrateurs peuvent créer des formations.');
+      toast.error(t('admin.errors.accessDenied'));
       return;
     }
 
@@ -67,7 +69,7 @@ const FormationUpload = () => {
     try {
       formationSchema.parse(formData);
     } catch (error: any) {
-      toast.error(error.errors?.[0]?.message || "Données du formulaire invalides");
+      toast.error(error.errors?.[0]?.message || t('admin.errors.invalidData'));
       return;
     }
 
@@ -76,7 +78,7 @@ const FormationUpload = () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
-        toast.error('Vous devez être connecté');
+        toast.error(t('admin.errors.mustBeLoggedIn'));
         return;
       }
 
@@ -84,12 +86,12 @@ const FormationUpload = () => {
         .from('formations')
         .insert({
           ...formData,
-          is_published: false // Par défaut, les formations sont en brouillon
+          is_published: false
         });
 
       if (error) throw error;
 
-      toast.success('Formation créée avec succès !');
+      toast.success(t('admin.success.formationCreated'));
       setFormData({
         title: '',
         description: '',
@@ -98,7 +100,7 @@ const FormationUpload = () => {
         level: 'débutant'
       });
     } catch (error) {
-      toast.error('Erreur lors de la création de la formation');
+      toast.error(t('admin.errors.creationError'));
     } finally {
       setLoading(false);
     }
@@ -106,7 +108,7 @@ const FormationUpload = () => {
 
   const handleVideoUpload = async (file: File, formationId: string) => {
     if (!isAdmin) {
-      toast.error('Accès refusé. Seuls les administrateurs peuvent uploader des vidéos.');
+      toast.error(t('admin.errors.videoUploadDenied'));
       return;
     }
 
@@ -114,7 +116,7 @@ const FormationUpload = () => {
     try {
       videoFileSchema.parse({ file });
     } catch (error: any) {
-      toast.error(error.errors?.[0]?.message || "Format de fichier vidéo invalide");
+      toast.error(error.errors?.[0]?.message || t('admin.errors.invalidVideoFormat'));
       return;
     }
 
@@ -136,15 +138,15 @@ const FormationUpload = () => {
 
       if (updateError) throw updateError;
 
-      toast.success('Vidéo uploadée avec succès !');
+      toast.success(t('admin.success.videoUploaded'));
     } catch (error) {
-      toast.error('Erreur lors de l\'upload de la vidéo');
+      toast.error(t('admin.errors.videoUploadError'));
     }
   };
 
   const handleThumbnailUpload = async (file: File, formationId: string) => {
     if (!isAdmin) {
-      toast.error('Accès refusé. Seuls les administrateurs peuvent uploader des miniatures.');
+      toast.error(t('admin.errors.thumbnailUploadDenied'));
       return;
     }
 
@@ -152,7 +154,7 @@ const FormationUpload = () => {
     try {
       imageFileSchema.parse({ file });
     } catch (error: any) {
-      toast.error(error.errors?.[0]?.message || "Format de fichier image invalide");
+      toast.error(error.errors?.[0]?.message || t('admin.errors.invalidImageFormat'));
       return;
     }
 
@@ -178,9 +180,9 @@ const FormationUpload = () => {
 
       if (updateError) throw updateError;
 
-      toast.success('Miniature uploadée avec succès !');
+      toast.success(t('admin.success.thumbnailUploaded'));
     } catch (error) {
-      toast.error('Erreur lors de l\'upload de la miniature');
+      toast.error(t('admin.errors.thumbnailUploadError'));
     }
   };
 
@@ -191,7 +193,7 @@ const FormationUpload = () => {
           <CardContent className="p-8">
             <div className="text-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cosmic-stellar-gold mx-auto mb-4"></div>
-              <p className="text-cosmic-star-white/80">Vérification des permissions...</p>
+              <p className="text-cosmic-star-white/80">{t('admin.checkingPermissions')}</p>
             </div>
           </CardContent>
         </Card>
@@ -206,12 +208,12 @@ const FormationUpload = () => {
           <CardContent className="p-8">
             <div className="text-center">
               <Shield className="w-16 h-16 text-red-500 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-red-500 mb-2">Accès Refusé</h2>
+              <h2 className="text-2xl font-bold text-red-500 mb-2">{t('admin.accessDenied')}</h2>
               <p className="text-cosmic-star-white/80 mb-4">
-                Seuls les administrateurs peuvent accéder à cette page.
+                {t('admin.accessDeniedMessage')}
               </p>
               <p className="text-cosmic-star-white/60 text-sm">
-                Si vous pensez qu'il s'agit d'une erreur, contactez l'administrateur système.
+                {t('admin.accessDeniedContact')}
               </p>
             </div>
           </CardContent>
@@ -226,25 +228,25 @@ const FormationUpload = () => {
         <CardHeader>
           <CardTitle className="cosmic-text text-2xl flex items-center gap-2">
             <Shield className="w-6 h-6 text-cosmic-stellar-gold" />
-            Créer une nouvelle formation
+            {t('admin.createFormation')}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="title">Titre de la formation</Label>
+                <Label htmlFor="title">{t('admin.formationTitle')}</Label>
                 <Input
                   id="title"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  placeholder="Ex: Maîtriser l'art de la négociation"
+                  placeholder={t('admin.titlePlaceholder')}
                   required
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="price">Prix (DA)</Label>
+                <Label htmlFor="price">{t('admin.price')}</Label>
                 <Input
                   id="price"
                   type="number"
@@ -252,55 +254,55 @@ const FormationUpload = () => {
                   step="0.01"
                   value={formData.price}
                   onChange={(e) => setFormData({ ...formData, price: parseFloat(e.target.value) })}
-                  placeholder="0.00"
+                  placeholder={t('admin.pricePlaceholder')}
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="duration">Durée (minutes)</Label>
+                <Label htmlFor="duration">{t('admin.duration')}</Label>
                 <Input
                   id="duration"
                   type="number"
                   min="1"
                   value={formData.duration}
                   onChange={(e) => setFormData({ ...formData, duration: parseInt(e.target.value) })}
-                  placeholder="60"
+                  placeholder={t('admin.durationPlaceholder')}
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="level">Niveau</Label>
+                <Label htmlFor="level">{t('admin.level')}</Label>
                 <Select value={formData.level} onValueChange={(value) => setFormData({ ...formData, level: value })}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="débutant">Débutant</SelectItem>
-                    <SelectItem value="intermédiaire">Intermédiaire</SelectItem>
-                    <SelectItem value="avancé">Avancé</SelectItem>
+                    <SelectItem value="débutant">{t('admin.levels.débutant')}</SelectItem>
+                    <SelectItem value="intermédiaire">{t('admin.levels.intermédiaire')}</SelectItem>
+                    <SelectItem value="avancé">{t('admin.levels.avancé')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="description">Description</Label>
+              <Label htmlFor="description">{t('admin.description')}</Label>
               <Textarea
                 id="description"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                placeholder="Décrivez votre formation, ses objectifs et ce que les participants vont apprendre..."
+                placeholder={t('admin.descriptionPlaceholder')}
                 rows={4}
               />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label>Vidéo de la formation</Label>
+                <Label>{t('admin.videoUpload')}</Label>
                 <div className="border-2 border-dashed border-cosmic-stellar-gold/30 rounded-lg p-6 text-center hover:border-cosmic-stellar-gold/50 transition-colors">
                   <Video className="w-12 h-12 text-cosmic-stellar-gold mx-auto mb-2" />
                   <p className="text-sm text-muted-foreground mb-2">
-                    Glissez-déposez votre vidéo ou cliquez pour parcourir
+                    {t('admin.dragDropVideo')}
                   </p>
                   <Input
                     type="file"
@@ -310,7 +312,6 @@ const FormationUpload = () => {
                     onChange={(e) => {
                       const file = e.target.files?.[0];
                       if (file) {
-                        // Logique d'upload après création de la formation
                         console.log('Video file selected:', file.name);
                       }
                     }}
@@ -322,17 +323,17 @@ const FormationUpload = () => {
                     onClick={() => document.getElementById('video-upload')?.click()}
                   >
                     <Upload className="w-4 h-4 mr-2" />
-                    Choisir une vidéo
+                    {t('admin.chooseVideo')}
                   </Button>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label>Miniature</Label>
+                <Label>{t('admin.thumbnailUpload')}</Label>
                 <div className="border-2 border-dashed border-cosmic-stellar-gold/30 rounded-lg p-6 text-center hover:border-cosmic-stellar-gold/50 transition-colors">
                   <Image className="w-12 h-12 text-cosmic-stellar-gold mx-auto mb-2" />
                   <p className="text-sm text-muted-foreground mb-2">
-                    Image de couverture pour votre formation
+                    {t('admin.dragDropImage')}
                   </p>
                   <Input
                     type="file"
@@ -353,7 +354,7 @@ const FormationUpload = () => {
                     onClick={() => document.getElementById('thumbnail-upload')?.click()}
                   >
                     <Upload className="w-4 h-4 mr-2" />
-                    Choisir une image
+                    {t('admin.chooseImage')}
                   </Button>
                 </div>
               </div>
@@ -361,10 +362,10 @@ const FormationUpload = () => {
 
             <div className="flex gap-4">
               <Button type="submit" variant="stellar" disabled={loading} className="flex-1">
-                {loading ? 'Création en cours...' : 'Créer la formation'}
+                {loading ? t('admin.creating') : t('admin.createButton')}
               </Button>
               <Button type="button" variant="outline" disabled={loading}>
-                Sauvegarder en brouillon
+                {t('admin.saveDraft')}
               </Button>
             </div>
           </form>

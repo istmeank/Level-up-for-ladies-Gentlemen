@@ -156,5 +156,84 @@
         "type": "personalTestimony"
       }
     ]
+  },
+  "admin": {
+    "checkingPermissions": "Vérification des permissions...",
+    "accessDenied": "Accès Refusé",
+    "accessDeniedMessage": "Seuls les administrateurs peuvent accéder à cette page.",
+    "accessDeniedContact": "Si vous pensez qu'il s'agit d'une erreur, contactez l'administrateur système.",
+    "createFormation": "Créer une nouvelle formation",
+    "formationTitle": "Titre de la formation",
+    "price": "Prix (DA)",
+    "duration": "Durée (minutes)",
+    "level": "Niveau",
+    "description": "Description",
+    "videoUpload": "Vidéo de la formation",
+    "thumbnailUpload": "Miniature",
+    "dragDropVideo": "Glissez-déposez votre vidéo ou cliquez pour parcourir",
+    "dragDropImage": "Image de couverture pour votre formation",
+    "chooseVideo": "Choisir une vidéo",
+    "chooseImage": "Choisir une image",
+    "creating": "Création en cours...",
+    "createButton": "Créer la formation",
+    "saveDraft": "Sauvegarder en brouillon",
+    "titlePlaceholder": "Ex: Maîtriser l'art de la négociation",
+    "pricePlaceholder": "0.00",
+    "durationPlaceholder": "60",
+    "descriptionPlaceholder": "Décrivez votre formation, ses objectifs et ce que les participants vont apprendre...",
+    "levels": {
+      "débutant": "Débutant",
+      "intermédiaire": "Intermédiaire",
+      "avancé": "Avancé"
+    },
+    "errors": {
+      "permissionCheck": "Erreur lors de la vérification des permissions",
+      "accessDenied": "Accès refusé. Seuls les administrateurs peuvent créer des formations.",
+      "invalidData": "Données du formulaire invalides",
+      "mustBeLoggedIn": "Vous devez être connecté",
+      "creationError": "Erreur lors de la création de la formation",
+      "videoUploadDenied": "Accès refusé. Seuls les administrateurs peuvent uploader des vidéos.",
+      "thumbnailUploadDenied": "Accès refusé. Seuls les administrateurs peuvent uploader des miniatures.",
+      "invalidVideoFormat": "Format de fichier vidéo invalide",
+      "invalidImageFormat": "Format de fichier image invalide",
+      "videoUploadError": "Erreur lors de l'upload de la vidéo",
+      "thumbnailUploadError": "Erreur lors de l'upload de la miniature"
+    },
+    "success": {
+      "formationCreated": "Formation créée avec succès !",
+      "videoUploaded": "Vidéo uploadée avec succès !",
+      "thumbnailUploaded": "Miniature uploadée avec succès !"
+    }
+  },
+  "auth": {
+    "title": "LEVEL UP",
+    "subtitle": "Rejoignez l'univers cosmique",
+    "authentication": "Authentification",
+    "createOrLogin": "Créez votre compte ou connectez-vous à votre espace",
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter",
+    "email": "Email",
+    "password": "Mot de passe",
+    "loading": "Chargement...",
+    "or": "Ou",
+    "signUpWithGoogle": "S'inscrire avec Google",
+    "signInWithGoogle": "Se connecter avec Google",
+    "backToHome": "Retour à l'accueil",
+    "emailPlaceholder": "votre@email.com",
+    "passwordPlaceholder": "••••••••",
+    "errors": {
+      "invalidData": "Données invalides",
+      "userExists": "Un compte existe déjà avec cette adresse email. Essayez de vous connecter.",
+      "signUpError": "Erreur lors de l'inscription. Veuillez réessayer.",
+      "invalidCredentials": "Identifiants invalides. Vérifiez votre email et mot de passe.",
+      "signInError": "Erreur de connexion. Veuillez réessayer.",
+      "google403": "Erreur 403: Configuration Google requise. Vérifiez les URLs autorisées dans Google Cloud Console.",
+      "googleRedirect": "Erreur de redirection. Vérifiez la configuration des URLs dans Supabase.",
+      "googleOAuth": "Erreur OAuth. Vérifiez que Google est activé dans Supabase Auth.",
+      "googleError": "Erreur lors de la connexion Google. Veuillez réessayer."
+    },
+    "success": {
+      "checkEmail": "Vérifiez votre email pour confirmer votre inscription !"
+    }
   }
 }

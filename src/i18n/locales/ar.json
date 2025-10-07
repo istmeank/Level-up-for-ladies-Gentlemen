@@ -156,5 +156,84 @@
         "type": "personalTestimony"
       }
     ]
+  },
+  "admin": {
+    "checkingPermissions": "جاري التحقق من الأذونات...",
+    "accessDenied": "تم رفض الوصول",
+    "accessDeniedMessage": "يمكن للمسؤولين فقط الوصول إلى هذه الصفحة.",
+    "accessDeniedContact": "إذا كنت تعتقد أن هذا خطأ، اتصل بمسؤول النظام.",
+    "createFormation": "إنشاء تدريب جديد",
+    "formationTitle": "عنوان التدريب",
+    "price": "السعر (دج)",
+    "duration": "المدة (دقائق)",
+    "level": "المستوى",
+    "description": "الوصف",
+    "videoUpload": "فيديو التدريب",
+    "thumbnailUpload": "الصورة المصغرة",
+    "dragDropVideo": "اسحب وأفلت الفيديو الخاص بك أو انقر للتصفح",
+    "dragDropImage": "صورة الغلاف للتدريب الخاص بك",
+    "chooseVideo": "اختر فيديو",
+    "chooseImage": "اختر صورة",
+    "creating": "جاري الإنشاء...",
+    "createButton": "إنشاء التدريب",
+    "saveDraft": "حفظ كمسودة",
+    "titlePlaceholder": "مثال: إتقان فن التفاوض",
+    "pricePlaceholder": "0.00",
+    "durationPlaceholder": "60",
+    "descriptionPlaceholder": "صف التدريب الخاص بك وأهدافه وما سيتعلمه المشاركون...",
+    "levels": {
+      "débutant": "مبتدئ",
+      "intermédiaire": "متوسط",
+      "avancé": "متقدم"
+    },
+    "errors": {
+      "permissionCheck": "خطأ في التحقق من الأذونات",
+      "accessDenied": "تم رفض الوصول. يمكن للمسؤولين فقط إنشاء التدريبات.",
+      "invalidData": "بيانات النموذج غير صالحة",
+      "mustBeLoggedIn": "يجب أن تكون مسجل الدخول",
+      "creationError": "خطأ في إنشاء التدريب",
+      "videoUploadDenied": "تم رفض الوصول. يمكن للمسؤولين فقط تحميل مقاطع الفيديو.",
+      "thumbnailUploadDenied": "تم رفض الوصول. يمكن للمسؤولين فقط تحميل الصور المصغرة.",
+      "invalidVideoFormat": "تنسيق ملف الفيديو غير صالح",
+      "invalidImageFormat": "تنسيق ملف الصورة غير صالح",
+      "videoUploadError": "خطأ في تحميل الفيديو",
+      "thumbnailUploadError": "خطأ في تحميل الصورة المصغرة"
+    },
+    "success": {
+      "formationCreated": "تم إنشاء التدريب بنجاح!",
+      "videoUploaded": "تم تحميل الفيديو بنجاح!",
+      "thumbnailUploaded": "تم تحميل الصورة المصغرة بنجاح!"
+    }
+  },
+  "auth": {
+    "title": "LEVEL UP",
+    "subtitle": "انضم إلى الكون الكوني",
+    "authentication": "المصادقة",
+    "createOrLogin": "أنشئ حسابك أو سجل الدخول إلى مساحتك",
+    "signUp": "سجل",
+    "signIn": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "loading": "جاري التحميل...",
+    "or": "أو",
+    "signUpWithGoogle": "سجل مع جوجل",
+    "signInWithGoogle": "سجل الدخول مع جوجل",
+    "backToHome": "العودة إلى الصفحة الرئيسية",
+    "emailPlaceholder": "email@example.com",
+    "passwordPlaceholder": "••••••••",
+    "errors": {
+      "invalidData": "بيانات غير صالحة",
+      "userExists": "يوجد حساب بالفعل بهذا العنوان البريدي. حاول تسجيل الدخول.",
+      "signUpError": "خطأ أثناء التسجيل. يرجى المحاولة مرة أخرى.",
+      "invalidCredentials": "بيانات اعتماد غير صالحة. تحقق من بريدك الإلكتروني وكلمة المرور.",
+      "signInError": "خطأ في تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "google403": "خطأ 403: مطلوب تكوين جوجل. تحقق من عناوين URL المصرح بها في Google Cloud Console.",
+      "googleRedirect": "خطأ في إعادة التوجيه. تحقق من تكوين عناوين URL في Supabase.",
+      "googleOAuth": "خطأ OAuth. تحقق من تفعيل جوجل في Supabase Auth.",
+      "googleError": "خطأ أثناء تسجيل الدخول بجوجل. يرجى المحاولة مرة أخرى."
+    },
+    "success": {
+      "checkEmail": "تحقق من بريدك الإلكتروني لتأكيد تسجيلك!"
+    }
   }
 }
