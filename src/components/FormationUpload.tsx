@@ -36,20 +36,18 @@ const FormationUpload = () => {
         return;
       }
 
-      const { data: profile, error } = await supabase
-        .from('profiles')
-        .select('role')
-        .eq('id', user.id)
-        .single();
+      // Use secure RPC function to check admin status
+      const { data: isAdminResult, error } = await supabase
+        .rpc('is_admin', { user_id: user.id });
 
       if (error) {
-        console.error('Error fetching user role:', error);
+        console.error('Error checking admin role:', error);
         toast.error(t('admin.errors.permissionCheck'));
         setCheckingPermissions(false);
         return;
       }
 
-      setIsAdmin(profile?.role === 'admin');
+      setIsAdmin(isAdminResult === true);
       setCheckingPermissions(false);
     } catch (error) {
       console.error('Error checking admin role:', error);
