@@ -9,6 +9,15 @@ const Hero = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [showCosmicEffect, setShowCosmicEffect] = useState(false);
+  const [activeZone, setActiveZone] = useState<string | null>(null);
+  
+  const handleZoneClick = (section: string, zoneId: string) => {
+    setActiveZone(zoneId);
+    setTimeout(() => {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => setActiveZone(null), 1000);
+    }, 300);
+  };
   return <section className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden" style={{
     backgroundImage: `url(${heroBackground})`,
     backgroundSize: 'cover',
@@ -41,7 +50,7 @@ const Hero = () => {
               </>
             )}
             
-            {/* Logo avec glow effect et zones cliquables */}
+            {/* Logo avec glow effect et zones cliquables géométriques */}
             <div 
               className="relative w-full h-full flex items-center justify-center group"
               onMouseEnter={() => setShowCosmicEffect(true)}
@@ -50,88 +59,89 @@ const Hero = () => {
               <img 
                 src={forLadiesGentlemenLogo} 
                 alt="For Ladies Gentlemen - Level Up" 
-                className={`w-full h-full object-contain relative z-10 transition-all duration-500 ${
-                  showCosmicEffect 
-                    ? "scale-110" 
-                    : ""
-                }`}
+                className="w-full h-full object-contain relative z-10 transition-all duration-500"
               />
               
-              {/* Zones cliquables invisibles superposées */}
+              {/* Zones cliquables géométriques précises */}
               <div className="absolute inset-0 z-20">
-                {/* Zone supérieure gauche - Services */}
-                <a
-                  href="#services"
-                  className="absolute top-0 left-0 w-1/2 h-1/3 cursor-pointer hover:bg-cosmic-nebula-green/10 transition-all duration-300 group/zone"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                {/* Pilier supérieur gauche - Triangle */}
+                <div
+                  className="absolute top-[15%] left-[20%] w-[15%] h-[30%] cursor-pointer transition-all duration-300"
+                  style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
+                  onClick={() => handleZoneClick('services', 'zone1')}
                 >
-                  <span className="absolute inset-0 flex items-center justify-center text-cosmic-star-white opacity-0 group-hover/zone:opacity-100 transition-opacity text-xs font-bold">
-                    Services
-                  </span>
-                </a>
+                  <div 
+                    className={`w-full h-full transition-all duration-300 ${
+                      activeZone === 'zone1' 
+                        ? 'bg-cosmic-nebula-green shadow-[0_0_30px_hsl(var(--cosmic-nebula-green))]' 
+                        : 'hover:bg-cosmic-nebula-green/20'
+                    }`}
+                  />
+                </div>
                 
-                {/* Zone supérieure droite - Formations */}
-                <a
-                  href="#formations"
-                  className="absolute top-0 right-0 w-1/2 h-1/3 cursor-pointer hover:bg-cosmic-purple-pink/10 transition-all duration-300 group/zone"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('formations')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                {/* Pilier supérieur droit - Rectangle */}
+                <div
+                  className="absolute top-[15%] right-[20%] w-[15%] h-[30%] cursor-pointer transition-all duration-300"
+                  style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+                  onClick={() => handleZoneClick('formations', 'zone2')}
                 >
-                  <span className="absolute inset-0 flex items-center justify-center text-cosmic-star-white opacity-0 group-hover/zone:opacity-100 transition-opacity text-xs font-bold">
-                    Formations
-                  </span>
-                </a>
+                  <div 
+                    className={`w-full h-full transition-all duration-300 ${
+                      activeZone === 'zone2' 
+                        ? 'bg-cosmic-purple-pink shadow-[0_0_30px_hsl(var(--cosmic-purple-pink))]' 
+                        : 'hover:bg-cosmic-purple-pink/20'
+                    }`}
+                  />
+                </div>
                 
-                {/* Zone centrale gauche - À propos */}
-                <a
-                  href="#about"
-                  className="absolute top-1/3 left-0 w-1/2 h-1/3 cursor-pointer hover:bg-cosmic-stellar-gold/10 transition-all duration-300 group/zone"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                {/* Pilier central gauche - Hexagone */}
+                <div
+                  className="absolute top-[35%] left-[15%] w-[20%] h-[30%] cursor-pointer transition-all duration-300"
+                  style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+                  onClick={() => handleZoneClick('about', 'zone3')}
                 >
-                  <span className="absolute inset-0 flex items-center justify-center text-cosmic-star-white opacity-0 group-hover/zone:opacity-100 transition-opacity text-xs font-bold">
-                    À propos
-                  </span>
-                </a>
+                  <div 
+                    className={`w-full h-full transition-all duration-300 ${
+                      activeZone === 'zone3' 
+                        ? 'bg-cosmic-stellar-gold shadow-[0_0_30px_hsl(var(--cosmic-stellar-gold))]' 
+                        : 'hover:bg-cosmic-stellar-gold/20'
+                    }`}
+                  />
+                </div>
                 
-                {/* Zone centrale droite - Témoignages */}
-                <a
-                  href="#testimonials"
-                  className="absolute top-1/3 right-0 w-1/2 h-1/3 cursor-pointer hover:bg-cosmic-royal-blue/10 transition-all duration-300 group/zone"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                {/* Pilier central droit - Cercle */}
+                <div
+                  className="absolute top-[35%] right-[15%] w-[20%] h-[30%] cursor-pointer transition-all duration-300 rounded-full"
+                  onClick={() => handleZoneClick('testimonials', 'zone4')}
                 >
-                  <span className="absolute inset-0 flex items-center justify-center text-cosmic-star-white opacity-0 group-hover/zone:opacity-100 transition-opacity text-xs font-bold">
-                    Témoignages
-                  </span>
-                </a>
+                  <div 
+                    className={`w-full h-full rounded-full transition-all duration-300 ${
+                      activeZone === 'zone4' 
+                        ? 'bg-cosmic-royal-blue shadow-[0_0_30px_hsl(var(--cosmic-royal-blue))]' 
+                        : 'hover:bg-cosmic-royal-blue/20'
+                    }`}
+                  />
+                </div>
                 
-                {/* Zone inférieure (base du carré) - Qui suis-je - Effet d'ouverture */}
-                <a
-                  href="#who-am-i"
-                  className="absolute bottom-0 left-0 w-full h-1/3 cursor-pointer hover:bg-cosmic-nebula-purple/10 transition-all duration-500 group/base"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('who-am-i')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                {/* Base du carré - Qui suis-je - Trapèze avec effet d'ouverture */}
+                <div
+                  className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[60%] h-[25%] cursor-pointer transition-all duration-300"
+                  style={{ clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)' }}
+                  onClick={() => handleZoneClick('who-am-i', 'zone5')}
                 >
-                  <div className="absolute inset-0 overflow-hidden">
+                  <div 
+                    className={`w-full h-full transition-all duration-500 ${
+                      activeZone === 'zone5' 
+                        ? 'bg-cosmic-nebula-purple shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]' 
+                        : 'hover:bg-cosmic-nebula-purple/20'
+                    }`}
+                  >
                     {/* Effet d'ouverture de bas en haut */}
-                    <div className="absolute bottom-0 left-0 w-full h-0 group-hover/base:h-full bg-gradient-to-t from-cosmic-nebula-purple/30 to-transparent transition-all duration-700 ease-out"></div>
+                    <div className={`absolute bottom-0 left-0 w-full transition-all duration-700 ${
+                      activeZone === 'zone5' ? 'h-full' : 'h-0'
+                    } bg-gradient-to-t from-cosmic-nebula-purple/50 to-transparent`} />
                   </div>
-                  <span className="absolute inset-0 flex items-center justify-center text-cosmic-star-white opacity-0 group-hover/base:opacity-100 transition-opacity text-sm font-bold">
-                    Qui suis-je ?
-                  </span>
-                </a>
+                </div>
               </div>
             </div>
           </div>
