@@ -111,8 +111,8 @@ const Hero = () => {
                 alt="For Ladies Gentlemen - Level Up" 
                 className={`w-full h-full object-contain relative z-10 transition-all duration-500 ${
                   showCosmicEffect 
-                    ? "drop-shadow-[0_0_35px_hsl(var(--cosmic-stellar-gold)/0.9)] scale-110" 
-                    : "drop-shadow-[0_0_10px_hsl(var(--cosmic-stellar-gold)/0.3)]"
+                    ? "scale-110" 
+                    : ""
                 }`}
               />
               
