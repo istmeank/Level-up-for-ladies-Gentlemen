@@ -67,7 +67,7 @@ const Hero = () => {
               <div className="absolute inset-0 z-20">
                 {/* Pilier 1 - Extrême gauche (petit) */}
                 <div
-                  className={`absolute left-[8%] top-[25%] w-[6%] h-[45%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[14%] top-[32%] w-[6%] h-[38%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'pillar1' 
                       ? 'bg-cosmic-nebula-green/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-green))]'
                       : activeZone === 'pillar1'
@@ -81,7 +81,7 @@ const Hero = () => {
 
                 {/* Pilier 2 - Gauche (moyen) */}
                 <div
-                  className={`absolute left-[18%] top-[15%] w-[8%] h-[60%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[22%] top-[22%] w-[6%] h-[52%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'pillar2' 
                       ? 'bg-cosmic-purple-pink/30 shadow-[0_0_40px_hsl(var(--cosmic-purple-pink))]'
                       : activeZone === 'pillar2'
@@ -95,7 +95,7 @@ const Hero = () => {
 
                 {/* Pilier 3 - Centre-gauche (grand) */}
                 <div
-                  className={`absolute left-[30%] top-[8%] w-[12%] h-[70%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[30%] top-[12%] w-[14%] h-[64%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'pillar3' 
                       ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
                       : activeZone === 'pillar3'
@@ -109,7 +109,7 @@ const Hero = () => {
 
                 {/* Pilier 4 - Centre-droit (grand) */}
                 <div
-                  className={`absolute left-[58%] top-[8%] w-[12%] h-[70%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[52%] top-[12%] w-[14%] h-[64%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'pillar4' 
                       ? 'bg-cosmic-royal-blue/30 shadow-[0_0_40px_hsl(var(--cosmic-royal-blue))]'
                       : activeZone === 'pillar4'
@@ -123,7 +123,7 @@ const Hero = () => {
 
                 {/* Pilier 5 - Droite (moyen) */}
                 <div
-                  className={`absolute left-[74%] top-[15%] w-[8%] h-[60%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[72%] top-[22%] w-[6%] h-[52%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'pillar5' 
                       ? 'bg-cosmic-nebula-purple/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]'
                       : activeZone === 'pillar5'
@@ -137,7 +137,7 @@ const Hero = () => {
 
                 {/* Pilier 6 - Extrême droite (petit) */}
                 <div
-                  className={`absolute left-[86%] top-[25%] w-[6%] h-[45%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[80%] top-[32%] w-[6%] h-[38%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'pillar6' 
                       ? 'bg-cosmic-star-white/30 shadow-[0_0_40px_hsl(var(--cosmic-star-white))]'
                       : activeZone === 'pillar6'
@@ -151,7 +151,7 @@ const Hero = () => {
 
                 {/* Carré avec le "+" - Supérieur droit */}
                 <div
-                  className={`absolute right-[5%] top-[10%] w-[15%] h-[15%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute right-[8%] top-[12%] w-[12%] h-[12%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'plus-square' 
                       ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
                       : activeZone === 'plus-square'
@@ -165,7 +165,7 @@ const Hero = () => {
 
                 {/* Base rectangulaire - Qui suis-je */}
                 <div
-                  className={`absolute left-[8%] bottom-[8%] w-[84%] h-[8%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute left-[14%] bottom-[12%] w-[72%] h-[10%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'base' 
                       ? 'bg-cosmic-nebula-purple/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]'
                       : activeZone === 'base'
