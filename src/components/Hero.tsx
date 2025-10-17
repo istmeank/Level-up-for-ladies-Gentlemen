@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 const Hero = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [showCosmicEffect, setShowCosmicEffect] = useState(false);
   const [activeZone, setActiveZone] = useState<string | null>(null);
   const [hoveredZone, setHoveredZone] = useState<string | null>(null);
   
@@ -32,35 +31,16 @@ const Hero = () => {
       {/* Contenu principal */}
       <div className="relative z-10 flex flex-col items-center justify-center px-6 pt-28 md:pt-36">
         <div className="flex flex-col items-center text-center">
-          {/* Logo avec effets cosmiques néon */}
+          {/* Logo avec effet de flottaison */}
           <div className="relative w-80 h-80 md:w-96 md:h-96 mb-8 md:mb-10 -mt-32">
-            {showCosmicEffect && (
-              <>
-                {/* Effets néon multiples couches autour du logo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cosmic-stellar-gold/20 via-cosmic-nebula-green/20 to-cosmic-purple-pink/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-purple/15 via-cosmic-royal-blue/15 to-cosmic-stellar-gold/15 rounded-full blur-2xl animate-pulse animation-delay-1000"></div>
-                <div className="absolute -inset-2 bg-gradient-to-br from-cosmic-purple-pink/10 via-cosmic-nebula-green/10 to-cosmic-nebula-purple/10 rounded-full blur-xl animate-pulse animation-delay-2000"></div>
-
-                {/* Petites particules cosmiques fixes */}
-                <div className="absolute top-12 left-16 w-1 h-1 bg-cosmic-star-white rounded-full animate-ping animation-delay-1000"></div>
-                <div className="absolute top-20 right-20 w-0.5 h-0.5 bg-cosmic-stellar-gold rounded-full animate-pulse animation-delay-2000"></div>
-                <div className="absolute bottom-16 left-20 w-1 h-1 bg-cosmic-nebula-green rounded-full animate-ping animation-delay-3000"></div>
-                <div className="absolute bottom-12 right-16 w-0.5 h-0.5 bg-cosmic-purple-pink rounded-full animate-pulse animation-delay-4000"></div>
-                <div className="absolute top-1/3 left-8 w-0.5 h-0.5 bg-cosmic-nebula-purple rounded-full animate-ping animation-delay-5000"></div>
-                <div className="absolute bottom-1/3 right-8 w-1 h-1 bg-cosmic-royal-blue rounded-full animate-pulse animation-delay-6000"></div>
-              </>
-            )}
-            
-            {/* Logo avec glow effect et zones cliquables géométriques */}
+            {/* Logo avec zones cliquables géométriques */}
             <div 
               className="relative w-full h-full flex items-center justify-center group"
-              onMouseEnter={() => setShowCosmicEffect(true)}
-              onMouseLeave={() => setShowCosmicEffect(false)}
             >
               <img 
                 src={forLadiesGentlemenLogo} 
                 alt="For Ladies Gentlemen - Level Up" 
-                className="w-full h-full object-contain relative z-10 transition-all duration-500"
+                className="w-full h-full object-contain relative z-10 transition-all duration-500 animate-float"
               />
               
               {/* Zones cliquables précises sur les éléments du logo */}
