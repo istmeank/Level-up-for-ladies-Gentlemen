@@ -10,6 +10,7 @@ const Hero = () => {
   const { t } = useTranslation();
   const [showCosmicEffect, setShowCosmicEffect] = useState(false);
   const [activeZone, setActiveZone] = useState<string | null>(null);
+  const [hoveredZone, setHoveredZone] = useState<string | null>(null);
   
   const handleZoneClick = (section: string, zoneId: string) => {
     setActiveZone(zoneId);
@@ -62,85 +63,123 @@ const Hero = () => {
                 className="w-full h-full object-contain relative z-10 transition-all duration-500"
               />
               
-              {/* Zones cliquables géométriques précises */}
+              {/* Zones cliquables précises sur les éléments du logo */}
               <div className="absolute inset-0 z-20">
-                {/* Pilier supérieur gauche - Triangle */}
+                {/* Pilier 1 - Extrême gauche (petit) */}
                 <div
-                  className="absolute top-[15%] left-[20%] w-[15%] h-[30%] cursor-pointer transition-all duration-300"
-                  style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
-                  onClick={() => handleZoneClick('services', 'zone1')}
-                >
-                  <div 
-                    className={`w-full h-full transition-all duration-300 ${
-                      activeZone === 'zone1' 
-                        ? 'bg-cosmic-nebula-green shadow-[0_0_30px_hsl(var(--cosmic-nebula-green))]' 
-                        : 'hover:bg-cosmic-nebula-green/20'
-                    }`}
-                  />
-                </div>
-                
-                {/* Pilier supérieur droit - Rectangle */}
+                  className={`absolute left-[8%] top-[25%] w-[6%] h-[45%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'pillar1' 
+                      ? 'bg-cosmic-nebula-green/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-green))]'
+                      : activeZone === 'pillar1'
+                      ? 'bg-cosmic-nebula-green/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-green))]'
+                      : 'hover:bg-cosmic-nebula-green/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-nebula-green)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('pillar1')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('services', 'pillar1')}
+                />
+
+                {/* Pilier 2 - Gauche (moyen) */}
                 <div
-                  className="absolute top-[15%] right-[20%] w-[15%] h-[30%] cursor-pointer transition-all duration-300"
-                  style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
-                  onClick={() => handleZoneClick('formations', 'zone2')}
-                >
-                  <div 
-                    className={`w-full h-full transition-all duration-300 ${
-                      activeZone === 'zone2' 
-                        ? 'bg-cosmic-purple-pink shadow-[0_0_30px_hsl(var(--cosmic-purple-pink))]' 
-                        : 'hover:bg-cosmic-purple-pink/20'
-                    }`}
-                  />
-                </div>
-                
-                {/* Pilier central gauche - Hexagone */}
+                  className={`absolute left-[18%] top-[15%] w-[8%] h-[60%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'pillar2' 
+                      ? 'bg-cosmic-purple-pink/30 shadow-[0_0_40px_hsl(var(--cosmic-purple-pink))]'
+                      : activeZone === 'pillar2'
+                      ? 'bg-cosmic-purple-pink/30 shadow-[0_0_40px_hsl(var(--cosmic-purple-pink))]'
+                      : 'hover:bg-cosmic-purple-pink/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-purple-pink)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('pillar2')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('formations', 'pillar2')}
+                />
+
+                {/* Pilier 3 - Centre-gauche (grand) */}
                 <div
-                  className="absolute top-[35%] left-[15%] w-[20%] h-[30%] cursor-pointer transition-all duration-300"
-                  style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
-                  onClick={() => handleZoneClick('about', 'zone3')}
-                >
-                  <div 
-                    className={`w-full h-full transition-all duration-300 ${
-                      activeZone === 'zone3' 
-                        ? 'bg-cosmic-stellar-gold shadow-[0_0_30px_hsl(var(--cosmic-stellar-gold))]' 
-                        : 'hover:bg-cosmic-stellar-gold/20'
-                    }`}
-                  />
-                </div>
-                
-                {/* Pilier central droit - Cercle */}
+                  className={`absolute left-[30%] top-[8%] w-[12%] h-[70%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'pillar3' 
+                      ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
+                      : activeZone === 'pillar3'
+                      ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
+                      : 'hover:bg-cosmic-stellar-gold/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('pillar3')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('about', 'pillar3')}
+                />
+
+                {/* Pilier 4 - Centre-droit (grand) */}
                 <div
-                  className="absolute top-[35%] right-[15%] w-[20%] h-[30%] cursor-pointer transition-all duration-300 rounded-full"
-                  onClick={() => handleZoneClick('testimonials', 'zone4')}
-                >
-                  <div 
-                    className={`w-full h-full rounded-full transition-all duration-300 ${
-                      activeZone === 'zone4' 
-                        ? 'bg-cosmic-royal-blue shadow-[0_0_30px_hsl(var(--cosmic-royal-blue))]' 
-                        : 'hover:bg-cosmic-royal-blue/20'
-                    }`}
-                  />
-                </div>
-                
-                {/* Base du carré - Qui suis-je - Trapèze avec effet d'ouverture */}
+                  className={`absolute left-[58%] top-[8%] w-[12%] h-[70%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'pillar4' 
+                      ? 'bg-cosmic-royal-blue/30 shadow-[0_0_40px_hsl(var(--cosmic-royal-blue))]'
+                      : activeZone === 'pillar4'
+                      ? 'bg-cosmic-royal-blue/30 shadow-[0_0_40px_hsl(var(--cosmic-royal-blue))]'
+                      : 'hover:bg-cosmic-royal-blue/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-royal-blue)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('pillar4')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('services-products', 'pillar4')}
+                />
+
+                {/* Pilier 5 - Droite (moyen) */}
                 <div
-                  className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[60%] h-[25%] cursor-pointer transition-all duration-300"
-                  style={{ clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)' }}
-                  onClick={() => handleZoneClick('who-am-i', 'zone5')}
+                  className={`absolute left-[74%] top-[15%] w-[8%] h-[60%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'pillar5' 
+                      ? 'bg-cosmic-nebula-purple/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]'
+                      : activeZone === 'pillar5'
+                      ? 'bg-cosmic-nebula-purple/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]'
+                      : 'hover:bg-cosmic-nebula-purple/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-nebula-purple)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('pillar5')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('testimonials', 'pillar5')}
+                />
+
+                {/* Pilier 6 - Extrême droite (petit) */}
+                <div
+                  className={`absolute left-[86%] top-[25%] w-[6%] h-[45%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'pillar6' 
+                      ? 'bg-cosmic-star-white/30 shadow-[0_0_40px_hsl(var(--cosmic-star-white))]'
+                      : activeZone === 'pillar6'
+                      ? 'bg-cosmic-star-white/30 shadow-[0_0_40px_hsl(var(--cosmic-star-white))]'
+                      : 'hover:bg-cosmic-star-white/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-star-white)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('pillar6')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('contact', 'pillar6')}
+                />
+
+                {/* Carré avec le "+" - Supérieur droit */}
+                <div
+                  className={`absolute right-[5%] top-[10%] w-[15%] h-[15%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'plus-square' 
+                      ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
+                      : activeZone === 'plus-square'
+                      ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
+                      : 'hover:bg-cosmic-stellar-gold/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('plus-square')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('formations', 'plus-square')}
+                />
+
+                {/* Base rectangulaire - Qui suis-je */}
+                <div
+                  className={`absolute left-[8%] bottom-[8%] w-[84%] h-[8%] cursor-pointer transition-all duration-300 ${
+                    hoveredZone === 'base' 
+                      ? 'bg-cosmic-nebula-purple/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]'
+                      : activeZone === 'base'
+                      ? 'bg-cosmic-nebula-purple/30 shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]'
+                      : 'hover:bg-cosmic-nebula-purple/10 hover:shadow-[0_0_20px_hsl(var(--cosmic-nebula-purple)/0.5)]'
+                  }`}
+                  onMouseEnter={() => setHoveredZone('base')}
+                  onMouseLeave={() => setHoveredZone(null)}
+                  onClick={() => handleZoneClick('who-am-i', 'base')}
                 >
-                  <div 
-                    className={`w-full h-full transition-all duration-500 ${
-                      activeZone === 'zone5' 
-                        ? 'bg-cosmic-nebula-purple shadow-[0_0_40px_hsl(var(--cosmic-nebula-purple))]' 
-                        : 'hover:bg-cosmic-nebula-purple/20'
-                    }`}
-                  >
-                    {/* Effet d'ouverture de bas en haut */}
-                    <div className={`absolute bottom-0 left-0 w-full transition-all duration-700 ${
-                      activeZone === 'zone5' ? 'h-full' : 'h-0'
-                    } bg-gradient-to-t from-cosmic-nebula-purple/50 to-transparent`} />
-                  </div>
+                  {/* Effet d'ouverture de bas en haut */}
+                  <div className={`absolute bottom-0 left-0 w-full transition-all duration-700 ${
+                    activeZone === 'base' ? 'h-full' : 'h-0'
+                  } bg-gradient-to-t from-cosmic-nebula-purple/50 to-transparent`} />
                 </div>
               </div>
             </div>
