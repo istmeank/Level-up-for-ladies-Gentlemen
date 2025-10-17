@@ -151,7 +151,7 @@ const Hero = () => {
 
                 {/* Carré avec le "+" - Supérieur droit */}
                 <div
-                  className={`absolute right-[8%] top-[12%] w-[12%] h-[12%] cursor-pointer transition-all duration-300 ${
+                  className={`absolute right-[6%] top-[8%] w-[9%] h-[9%] cursor-pointer transition-all duration-300 ${
                     hoveredZone === 'plus-square' 
                       ? 'bg-cosmic-stellar-gold/30 shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold))]'
                       : activeZone === 'plus-square'
@@ -160,7 +160,7 @@ const Hero = () => {
                   }`}
                   onMouseEnter={() => setHoveredZone('plus-square')}
                   onMouseLeave={() => setHoveredZone(null)}
-                  onClick={() => handleZoneClick('formations', 'plus-square')}
+                  onClick={() => handleZoneClick('who-am-i', 'plus-square')}
                 />
 
                 {/* Base rectangulaire - Qui suis-je */}
