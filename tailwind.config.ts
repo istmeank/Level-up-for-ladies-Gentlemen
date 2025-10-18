@@ -161,7 +161,7 @@ export default {
         "float": "float 25s ease-in-out infinite",
         "stellar-spin": "stellar-spin 20s linear infinite",
         "galactic-rotate": "galactic-rotate 30s ease-in-out infinite",
-        "cosmic-pulse": "cosmic-pulse 12s ease-in-out infinite",
+        "cosmic-pulse": "cosmic-pulse 60s ease-in-out infinite",
         "nebula-drift": "nebula-drift 35s ease-in-out infinite",
       },
     },
