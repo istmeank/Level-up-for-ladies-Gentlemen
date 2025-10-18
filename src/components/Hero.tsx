@@ -40,7 +40,7 @@ const Hero = () => {
               <img 
                 src={forLadiesGentlemenLogo} 
                 alt="For Ladies Gentlemen - Level Up" 
-                className="w-full h-full object-contain relative z-10 transition-all duration-500 animate-float"
+                className="w-full h-full object-contain relative z-10 transition-all duration-500 animate-stellar-spin"
               />
               
               {/* Zones cliquables précises sur les éléments du logo */}

@@ -102,11 +102,67 @@ export default {
             transform: "translateY(-5px)",
           },
         },
+        "stellar-spin": {
+          "0%": {
+            transform: "perspective(800px) rotateY(0deg) scale(1)",
+          },
+          "50%": {
+            transform: "perspective(800px) rotateY(180deg) scale(1.1)",
+          },
+          "100%": {
+            transform: "perspective(800px) rotateY(360deg) scale(1)",
+          },
+        },
+        "galactic-rotate": {
+          "0%": {
+            transform: "perspective(1000px) rotateY(0deg) rotateX(0deg) rotateZ(0deg)",
+          },
+          "25%": {
+            transform: "perspective(1000px) rotateY(90deg) rotateX(5deg) rotateZ(2deg)",
+          },
+          "50%": {
+            transform: "perspective(1000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg)",
+          },
+          "75%": {
+            transform: "perspective(1000px) rotateY(270deg) rotateX(-5deg) rotateZ(-2deg)",
+          },
+          "100%": {
+            transform: "perspective(1000px) rotateY(360deg) rotateX(0deg) rotateZ(0deg)",
+          },
+        },
+        "cosmic-pulse": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            filter: "drop-shadow(0 0 20px rgba(168, 85, 247, 0.4))",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+            filter: "drop-shadow(0 0 40px rgba(168, 85, 247, 0.8))",
+          },
+        },
+        "nebula-drift": {
+          "0%": {
+            transform: "perspective(1200px) rotateY(0deg) rotateX(0deg) translateZ(0px)",
+          },
+          "33%": {
+            transform: "perspective(1200px) rotateY(120deg) rotateX(10deg) translateZ(20px)",
+          },
+          "66%": {
+            transform: "perspective(1200px) rotateY(240deg) rotateX(-10deg) translateZ(-20px)",
+          },
+          "100%": {
+            transform: "perspective(1200px) rotateY(360deg) rotateX(0deg) translateZ(0px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 25s ease-in-out infinite",
+        "stellar-spin": "stellar-spin 20s linear infinite",
+        "galactic-rotate": "galactic-rotate 30s ease-in-out infinite",
+        "cosmic-pulse": "cosmic-pulse 5s ease-in-out infinite",
+        "nebula-drift": "nebula-drift 35s ease-in-out infinite",
       },
     },
   },
