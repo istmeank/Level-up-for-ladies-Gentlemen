@@ -203,7 +203,12 @@
       "formationCreated": "Training created successfully!",
       "videoUploaded": "Video uploaded successfully!",
       "thumbnailUploaded": "Thumbnail uploaded successfully!"
-    }
+    },
+    "existingFormations": "Existing trainings",
+    "changeThumbnail": "Change thumbnail",
+    "addThumbnail": "Add thumbnail",
+    "published": "Published",
+    "draft": "Draft"
   },
   "auth": {
     "title": "LEVEL UP",

@@ -5,17 +5,26 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Upload, Video, Image, Shield } from "lucide-react";
+import { Upload, Video, Image, Shield, Edit } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { formationSchema, videoFileSchema, imageFileSchema, type FormationFormData } from "@/lib/validation";
 import { useTranslation } from "react-i18next";
+
+interface Formation {
+  id: string;
+  title: string;
+  description: string;
+  thumbnail_url: string | null;
+  is_published: boolean;
+}
 
 const FormationUpload = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [checkingPermissions, setCheckingPermissions] = useState(true);
+  const [formations, setFormations] = useState<Formation[]>([]);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -26,7 +35,22 @@ const FormationUpload = () => {
 
   useEffect(() => {
     checkAdminRole();
+    fetchFormations();
   }, []);
+
+  const fetchFormations = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('formations')
+        .select('id, title, description, thumbnail_url, is_published')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setFormations(data || []);
+    } catch (error) {
+      console.error('Error fetching formations:', error);
+    }
+  };
 
   const checkAdminRole = async () => {
     try {
@@ -179,9 +203,17 @@ const FormationUpload = () => {
       if (updateError) throw updateError;
 
       toast.success(t('admin.success.thumbnailUploaded'));
+      fetchFormations(); // Refresh the list
     } catch (error) {
       toast.error(t('admin.errors.thumbnailUploadError'));
     }
+  };
+
+  const handleExistingFormationThumbnail = async (e: React.ChangeEvent<HTMLInputElement>, formationId: string) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    await handleThumbnailUpload(file, formationId);
   };
 
   if (checkingPermissions) {
@@ -369,6 +401,59 @@ const FormationUpload = () => {
           </form>
         </CardContent>
       </Card>
+
+      {formations.length > 0 && (
+        <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 mt-6">
+          <CardHeader>
+            <CardTitle className="cosmic-text text-2xl flex items-center gap-2">
+              <Edit className="w-6 h-6 text-cosmic-stellar-gold" />
+              {t('admin.existingFormations')}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {formations.map((formation) => (
+                <div key={formation.id} className="border border-cosmic-stellar-gold/20 rounded-lg p-4 hover:border-cosmic-stellar-gold/40 transition-colors">
+                  <div className="flex items-start gap-4">
+                    {formation.thumbnail_url ? (
+                      <img src={formation.thumbnail_url} alt={formation.title} className="w-24 h-24 object-cover rounded-lg" />
+                    ) : (
+                      <div className="w-24 h-24 bg-cosmic-deep-purple/30 rounded-lg flex items-center justify-center">
+                        <Image className="w-8 h-8 text-cosmic-stellar-gold/50" />
+                      </div>
+                    )}
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-cosmic-star-white mb-1">{formation.title}</h3>
+                      <p className="text-sm text-cosmic-star-white/60 mb-2">{formation.description}</p>
+                      <div className="flex items-center gap-2">
+                        <Input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          id={`thumbnail-${formation.id}`}
+                          onChange={(e) => handleExistingFormationThumbnail(e, formation.id)}
+                        />
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          onClick={() => document.getElementById(`thumbnail-${formation.id}`)?.click()}
+                        >
+                          <Upload className="w-4 h-4 mr-2" />
+                          {formation.thumbnail_url ? t('admin.changeThumbnail') : t('admin.addThumbnail')}
+                        </Button>
+                        <span className={`text-xs px-2 py-1 rounded ${formation.is_published ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
+                          {formation.is_published ? t('admin.published') : t('admin.draft')}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 };

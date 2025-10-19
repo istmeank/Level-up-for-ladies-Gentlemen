@@ -203,7 +203,12 @@
       "formationCreated": "Formation créée avec succès !",
       "videoUploaded": "Vidéo uploadée avec succès !",
       "thumbnailUploaded": "Miniature uploadée avec succès !"
-    }
+    },
+    "existingFormations": "Formations existantes",
+    "changeThumbnail": "Changer la miniature",
+    "addThumbnail": "Ajouter une miniature",
+    "published": "Publié",
+    "draft": "Brouillon"
   },
   "auth": {
     "title": "LEVEL UP",

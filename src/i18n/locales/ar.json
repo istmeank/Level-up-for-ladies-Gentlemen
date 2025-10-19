@@ -203,7 +203,12 @@
       "formationCreated": "تم إنشاء التدريب بنجاح!",
       "videoUploaded": "تم تحميل الفيديو بنجاح!",
       "thumbnailUploaded": "تم تحميل الصورة المصغرة بنجاح!"
-    }
+    },
+    "existingFormations": "التدريبات الحالية",
+    "changeThumbnail": "تغيير الصورة المصغرة",
+    "addThumbnail": "إضافة صورة مصغرة",
+    "published": "منشور",
+    "draft": "مسودة"
   },
   "auth": {
     "title": "LEVEL UP",
