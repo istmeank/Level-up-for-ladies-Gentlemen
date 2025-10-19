@@ -134,8 +134,8 @@ const Formations = () => {
                 </div>
 
                 <CardHeader>
-                  <CardTitle className="cosmic-text text-xl mb-2">{formation.title}</CardTitle>
-                  {formation.duration && <div className="flex items-center text-sm text-muted-foreground">
+                  <CardTitle className="cosmic-text text-xl mb-2 rtl:text-right">{formation.title}</CardTitle>
+                  {formation.duration && <div className="flex items-center text-sm text-muted-foreground rtl:flex-row-reverse">
                       <Clock className="w-4 h-4 mr-1" />
                       {formation.duration} {t('formations.minutes')}
                     </div>}
