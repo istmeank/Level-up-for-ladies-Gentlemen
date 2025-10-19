@@ -199,3 +199,53 @@ All colors MUST be HSL.
   }
 }
 
+/* Support RTL pour l'arabe */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Espacement pour les liens de navigation en RTL */
+[dir="rtl"] nav a {
+  text-align: right;
+}
+
+/* Alignement du texte en RTL */
+[dir="rtl"] .text-center {
+  text-align: center;
+}
+
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  text-align: right;
+}
+
+[dir="rtl"] .text-center p,
+[dir="rtl"] .text-center h1,
+[dir="rtl"] .text-center h2,
+[dir="rtl"] .text-center h3,
+[dir="rtl"] .text-center h4,
+[dir="rtl"] .text-center h5,
+[dir="rtl"] .text-center h6 {
+  text-align: center;
+}
+
+/* Grilles en RTL - garder l'ordre naturel mais inverser le contenu */
+[dir="rtl"] .grid > * {
+  direction: rtl;
+}
+
+/* Flexbox en RTL */
+[dir="rtl"] .flex {
+  direction: rtl;
+}
+
+/* Badges et éléments inline en RTL */
+[dir="rtl"] .badge {
+  direction: rtl;
+}
+

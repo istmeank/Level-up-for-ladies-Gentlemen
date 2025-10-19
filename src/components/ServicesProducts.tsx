@@ -72,7 +72,7 @@ const ServicesProducts = () => {
             {t('servicesProducts.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-center">
             {t('servicesProducts.subtitle')}
           </p>
 
@@ -119,7 +119,7 @@ const ServicesProducts = () => {
                 </CardHeader>
 
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-muted-foreground mb-6 rtl:text-right">
                     {item.description}
                   </p>
 
@@ -154,10 +154,10 @@ const ServicesProducts = () => {
         <div className="text-center mt-16">
           <Card className="bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 border-cosmic-stellar-gold/30 max-w-2xl mx-auto">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold cosmic-text mb-4">
+              <h3 className="text-2xl font-bold cosmic-text mb-4 text-center">
                 {t('servicesProducts.customService')}
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-center">
                 {t('servicesProducts.customServiceText')}
               </p>
               <Button variant="stellar" size="lg" onClick={() => handleContact({

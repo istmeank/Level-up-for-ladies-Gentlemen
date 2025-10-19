@@ -21,7 +21,7 @@ const Navigation = () => {
         </div>
 
         {/* Navigation links - cachés sur mobile */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center gap-8">
           <a href="#about" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             {t('nav.mission')}
           </a>

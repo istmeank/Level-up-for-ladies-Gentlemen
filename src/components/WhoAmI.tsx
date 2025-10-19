@@ -90,8 +90,8 @@ const WhoAmI = () => {
           <div className="space-y-6 relative">
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-6">{t('whoAmI.journey')}</h3>
-                <p className="text-muted-foreground leading-relaxed">{t('whoAmI.journeyText')}</p>
+                <h3 className="text-2xl font-bold cosmic-text mb-6 rtl:text-right">{t('whoAmI.journey')}</h3>
+                <p className="text-muted-foreground leading-relaxed rtl:text-right">{t('whoAmI.journeyText')}</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-4 right-4 w-1 h-1 bg-cosmic-stellar-gold rounded-full animate-pulse"></div>
@@ -103,8 +103,8 @@ const WhoAmI = () => {
           <div className="space-y-6 relative">
             <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full relative overflow-hidden">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-6">{t('whoAmI.visionTitle')}</h3>
-                <p className="text-muted-foreground leading-relaxed">{t('whoAmI.visionText')}</p>
+                <h3 className="text-2xl font-bold cosmic-text mb-6 rtl:text-right">{t('whoAmI.visionTitle')}</h3>
+                <p className="text-muted-foreground leading-relaxed rtl:text-right">{t('whoAmI.visionText')}</p>
               </CardContent>
               {/* Petites étoiles décoratives autour de la carte */}
               <div className="absolute top-6 left-4 w-1 h-1 bg-cosmic-purple-pink rounded-full animate-pulse animation-delay-1000"></div>

@@ -7,8 +7,14 @@ const I18nDirectionManager = () => {
   useEffect(() => {
     const updateDirection = () => {
       const lang = i18n.language;
+      const direction = lang === 'ar' ? 'rtl' : 'ltr';
+      
       document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.dir = direction;
+      document.body.dir = direction;
+      
+      // Force re-render
+      document.body.style.direction = direction;
     };
 
     // Set initial direction

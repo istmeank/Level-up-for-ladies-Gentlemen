@@ -26,10 +26,10 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
             {t('services.title')}
           </h2>
-          <p className="text-xl text-cosmic-star-white/80 max-w-3xl mx-auto leading-relaxed mb-6">
+          <p className="text-xl text-cosmic-star-white/80 max-w-3xl mx-auto leading-relaxed mb-6 text-center">
             {t('services.subtitle')}
           </p>
-          <p className="text-lg text-cosmic-stellar-gold/90 font-semibold">
+          <p className="text-lg text-cosmic-stellar-gold/90 font-semibold text-center">
             {t('services.limitedGroup')}
           </p>
         </div>

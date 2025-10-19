@@ -105,7 +105,7 @@ const Formations = () => {
             {t('formations.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t('formations.subtitle')}</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-center">{t('formations.subtitle')}</p>
         </div>
 
         {formations.length === 0 ? <div className="text-center py-16">
@@ -142,7 +142,7 @@ const Formations = () => {
                 </CardHeader>
 
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-muted-foreground mb-6 flex-1">
+                  <p className="text-muted-foreground mb-6 flex-1 rtl:text-right">
                     {formation.description || t('formations.sampleDescription')}
                   </p>
 

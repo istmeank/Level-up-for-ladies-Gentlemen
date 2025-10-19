@@ -14,10 +14,10 @@ const Contact = () => {
               {t('contact.title')}
             </h2>
             
-            <p className="text-xl text-card-foreground mb-12 leading-relaxed max-w-2xl mx-auto">{t('contact.subtitle')}</p>
+            <p className="text-xl text-card-foreground mb-12 leading-relaxed max-w-2xl mx-auto text-center">{t('contact.subtitle')}</p>
 
             {/* Statistiques cosmiques */}
-            <div className="grid grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-3 gap-8 mb-12 rtl:direction-ltr">
               <div className="text-center">
                 <div className="text-4xl font-bold cosmic-text">1000+</div>
                 <div className="text-sm text-muted-foreground">{t('contact.transformed')}</div>

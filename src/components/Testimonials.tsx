@@ -24,7 +24,7 @@ const Testimonials = () => {
             <span className="relative z-10">{t('testimonials.title')}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cosmic-stellar-gold via-cosmic-nebula-pink to-cosmic-aurora-cyan opacity-30 blur-sm -z-10"></div>
           </h2>
-          <p className="text-lg text-cosmic-star-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-cosmic-star-white/80 max-w-2xl mx-auto leading-relaxed text-center">
             {t('testimonials.subtitle')}
           </p>
         </div>
@@ -40,7 +40,7 @@ const Testimonials = () => {
                   <span className="inline-block px-3 py-1 text-xs font-medium bg-cosmic-stellar-gold/20 text-cosmic-stellar-gold rounded-full mb-4">
                     {testimonial.type}
                   </span>
-                  <blockquote className="text-cosmic-star-white/90 leading-relaxed text-sm">
+                  <blockquote className="text-cosmic-star-white/90 leading-relaxed text-sm rtl:text-right">
                     "{testimonial.content}"
                   </blockquote>
                 </div>
