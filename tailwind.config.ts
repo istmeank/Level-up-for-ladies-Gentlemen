@@ -14,6 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
+        'heading': ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'tangerine': ['Tangerine', 'cursive'],
         'brush': ['Kaushan Script', 'cursive'],
       },
@@ -70,6 +72,17 @@ export default {
           "star-white": "hsl(var(--cosmic-star-white))",
           "purple-pink": "hsl(var(--cosmic-purple-pink))",
           "royal-blue": "hsl(var(--cosmic-royal-blue))",
+        },
+        // Perception brand colors
+        perception: {
+          gold: "hsl(var(--perception-gold-royal))",
+          "gold-metal": "hsl(var(--perception-gold-metal))",
+          white: "hsl(var(--perception-white))",
+          "soft-yellow": "hsl(var(--perception-soft-yellow))",
+          violet: "hsl(var(--perception-cosmic-violet))",
+          night: "hsl(var(--perception-night-blue))",
+          teal: "hsl(var(--perception-deep-teal))",
+          "input-bg": "hsl(var(--perception-input-bg))",
         },
       },
       borderRadius: {
@@ -163,7 +176,13 @@ export default {
         "galactic-rotate": "galactic-rotate 30s ease-in-out infinite",
         "cosmic-pulse": "cosmic-pulse 60s ease-in-out infinite",
         "nebula-drift": "nebula-drift 35s ease-in-out infinite",
+        "gold-glow": "cosmic-pulse 8s ease-in-out infinite",
       },
+      boxShadow: {
+        "gold-soft": "0 0 32px rgba(255, 215, 0, 0.25)",
+        "gold-strong": "0 0 56px rgba(255, 215, 0, 0.35)",
+        "cosmic-card": "0 10px 30px rgba(0,0,0,0.3), inset 0 0 0 1px hsla(0,0%,100%,0.06)",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
