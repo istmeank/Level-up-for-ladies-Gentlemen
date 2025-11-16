@@ -117,40 +117,70 @@ export type Database = {
       }
       services_products: {
         Row: {
+          benefits: Json | null
+          category: string | null
+          conditions: string | null
+          content_included: Json | null
           created_at: string
+          cta: string | null
           description: string | null
+          duration: string | null
           features: Json | null
+          format: string | null
           id: string
           image_url: string | null
           is_active: boolean | null
           name: string
+          pipeline: string | null
           price: number
+          tags: Json | null
           type: string
           updated_at: string
+          upsells: Json | null
         }
         Insert: {
+          benefits?: Json | null
+          category?: string | null
+          conditions?: string | null
+          content_included?: Json | null
           created_at?: string
+          cta?: string | null
           description?: string | null
+          duration?: string | null
           features?: Json | null
+          format?: string | null
           id?: string
           image_url?: string | null
           is_active?: boolean | null
           name: string
+          pipeline?: string | null
           price?: number
+          tags?: Json | null
           type: string
           updated_at?: string
+          upsells?: Json | null
         }
         Update: {
+          benefits?: Json | null
+          category?: string | null
+          conditions?: string | null
+          content_included?: Json | null
           created_at?: string
+          cta?: string | null
           description?: string | null
+          duration?: string | null
           features?: Json | null
+          format?: string | null
           id?: string
           image_url?: string | null
           is_active?: boolean | null
           name?: string
+          pipeline?: string | null
           price?: number
+          tags?: Json | null
           type?: string
           updated_at?: string
+          upsells?: Json | null
         }
         Relationships: []
       }
@@ -187,10 +217,7 @@ export type Database = {
         }
         Returns: boolean
       }
-      is_admin: {
-        Args: { user_id?: string }
-        Returns: boolean
-      }
+      is_admin: { Args: { user_id?: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "user"
