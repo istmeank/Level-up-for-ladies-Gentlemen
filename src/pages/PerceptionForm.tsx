@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import CosmicBackground from "@/components/perception/CosmicBackground";
 import PerceptionHeader from "@/components/perception/PerceptionHeader";
 import MultiStepForm from "@/components/perception/MultiStepForm";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
