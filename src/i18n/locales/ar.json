@@ -129,7 +129,20 @@
     "comingSoonDescription": "خدمات ومنتجات حصرية جديدة قادمة قريبًا!",
     "typeService": "خدمة",
     "typeProduct": "منتج",
-    "customServiceName": "خدمة مخصصة"
+    "typeProgram": "برنامج",
+    "typeCommunity": "مجتمع",
+    "customServiceName": "خدمة مخصصة",
+    "fields": {
+      "duration": "المدة",
+      "format": "الصيغة",
+      "category": "الفئة",
+      "benefits": "الفوائد",
+      "contentIncluded": "المحتوى المضمن",
+      "conditions": "الشروط",
+      "pipeline": "مسار CRM",
+      "upsells": "عروض إضافية مقترحة",
+      "tags": "العلامات"
+    }
   },
   "testimonials": {
     "title": "الشهادات",

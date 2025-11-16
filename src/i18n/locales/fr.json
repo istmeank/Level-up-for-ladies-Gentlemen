@@ -129,7 +129,20 @@
     "comingSoonDescription": "De nouveaux services et produits exclusifs arrivent bientôt !",
     "typeService": "Service",
     "typeProduct": "Produit",
-    "customServiceName": "Service personnalisé"
+    "typeProgram": "Programme",
+    "typeCommunity": "Communauté",
+    "customServiceName": "Service personnalisé",
+    "fields": {
+      "duration": "Durée",
+      "format": "Format",
+      "category": "Catégorie",
+      "benefits": "Bénéfices",
+      "contentIncluded": "Contenu inclus",
+      "conditions": "Conditions",
+      "pipeline": "Pipeline CRM",
+      "upsells": "Upsells suggérés",
+      "tags": "Tags"
+    }
   },
   "testimonials": {
     "title": "Témoignages",
