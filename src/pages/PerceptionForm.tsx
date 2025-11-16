@@ -48,6 +48,36 @@ const PerceptionForm: React.FC = () => {
 								<Button
 									onClick={onApplyClick}
 									className="bg-perception-gold text-black hover:bg-[#e6c200]"
+								>
+									Postuler maintenant
+								</Button>
+							</div>
+						</div>
+						<div className="relative">
+							<AspectRatio ratio={16 / 9}>
+								<div className="flex h-full w-full items-center justify-center rounded-xl border border-white/10 bg-black/40 backdrop-blur">
+									{/* Placeholder vidéo: remplace le contenu par un iframe YouTube/Vimeo si dispo */}
+									<div className="text-center">
+										<div className="text-6xl font-heading text-perception-gold">∞</div>
+										<p className="mt-2 text-sm text-white/70">Espace vidéo de présentation</p>
+										<p className="text-xs text-white/50">Intègre ton iframe ici</p>
+									</div>
+								</div>
+							</AspectRatio>
+						</div>
+					</div>
+				</section>
+
+				{/* Formulaire */}
+				<div ref={formRef} className="mt-10">
+					<PerceptionHeader />
+					<div className="mt-6">
+						<MultiStepForm />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default PerceptionForm;
