@@ -143,7 +143,8 @@ Deno.serve(async (req) => {
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (e) {
-    return new Response(JSON.stringify({ success: false, error: String(e?.message ?? e) }), { status: 500 });
+    const errorMessage = e instanceof Error ? e.message : String(e);
+    return new Response(JSON.stringify({ success: false, error: errorMessage }), { status: 500 });
   }
 });
 
