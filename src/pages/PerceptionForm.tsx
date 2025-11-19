@@ -8,9 +8,10 @@ import { motion } from "framer-motion";
 
 const PerceptionForm: React.FC = () => {
 	const formRef = useRef<HTMLDivElement | null>(null);
+	const videoRef = useRef<HTMLDivElement | null>(null);
 
 	const onApplyClick = () => {
-		formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+		videoRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
 	};
 
 	return (
@@ -64,7 +65,7 @@ const PerceptionForm: React.FC = () => {
 					</div>
 
 					{/* Vidéo centrée */}
-					<div className="relative z-10 max-w-4xl mx-auto mb-12">
+					<div ref={videoRef} className="relative z-10 max-w-4xl mx-auto mb-12">
 						<AspectRatio ratio={16 / 9}>
 							<div className="flex h-full w-full items-center justify-center rounded-2xl border-2 border-perception-gold/30 bg-black/60 backdrop-blur-md shadow-[0_0_50px_rgba(255,215,0,0.2)] overflow-hidden group hover:border-perception-gold/60 transition-all duration-300">
 								{/* Remplace par ton iframe YouTube/Vimeo si dispo */}
