@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Package, Briefcase, Check } from "lucide-react";
+import { ShoppingCart, Package, Briefcase, Check, ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 interface ServiceProduct {
   id: string;
   name: string;
@@ -18,6 +19,7 @@ interface ServiceProduct {
 }
 const ServicesProducts = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [items, setItems] = useState<ServiceProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedType, setSelectedType] = useState<'all' | 'service' | 'product'>('all');
@@ -144,7 +146,25 @@ const ServicesProducts = () => {
                       </div>
                     </div>
 
-                    
+                    {item.name.toLowerCase().includes('perception') ? (
+                      <Button 
+                        variant="stellar" 
+                        className="w-full group"
+                        onClick={() => navigate('/perception')}
+                      >
+                        {t('servicesProducts.apply')}
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    ) : (
+                      <Button 
+                        variant="outline" 
+                        className="w-full border-cosmic-stellar-gold/30 hover:border-cosmic-stellar-gold/60"
+                        onClick={() => handleContact(item)}
+                      >
+                        <ShoppingCart className="w-4 h-4 mr-2" />
+                        {t('servicesProducts.contactButton')}
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>)}
