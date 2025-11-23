@@ -79,7 +79,7 @@ All colors MUST be HSL.
 
     /* Animations */
     --transition-cosmic: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
@@ -156,27 +156,27 @@ All colors MUST be HSL.
   .cosmic-glow {
     box-shadow: var(--glow-stellar);
   }
-  
+
   .nebula-bg {
     background: var(--gradient-nebula);
   }
-  
+
   .stellar-bg {
     background: var(--gradient-stellar);
   }
-  
+
   .cosmic-text {
     background: var(--gradient-cosmic);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   .universe-effect {
     position: relative;
     overflow: hidden;
   }
-  
+
   .universe-effect::before {
     content: '';
     position: absolute;
@@ -184,7 +184,7 @@ All colors MUST be HSL.
     left: -50%;
     width: 200%;
     height: 200%;
-    background: 
+    background:
       radial-gradient(circle at 20% 30%, hsl(var(--cosmic-stellar-gold) / 0.1) 1px, transparent 1px),
       radial-gradient(circle at 80% 70%, hsl(var(--cosmic-nebula-green) / 0.1) 1px, transparent 1px),
       radial-gradient(circle at 40% 80%, hsl(var(--cosmic-nebula-purple) / 0.1) 1px, transparent 1px),
@@ -192,18 +192,108 @@ All colors MUST be HSL.
     animation: universe-float 20s linear infinite;
     pointer-events: none;
   }
-  
+
   .universe-effect:hover::before {
     animation-duration: 5s;
   }
 }
 
 @keyframes universe-float {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
+
+  0%,
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) translateY(-20px);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 50px hsl(var(--cosmic-stellar-gold) / 0.6));
+  }
+}
+
+@keyframes reveal-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes reveal-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .animate-reveal {
+    animation: reveal-scale 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 25%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.1) 75%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+  }
+
+  .animate-reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
 
@@ -211,7 +301,7 @@ All colors MUST be HSL.
   .bg-gradient-radial {
     background: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
-  
+
   .bg-gradient-conic {
     background: conic-gradient(var(--tw-gradient-stops));
   }
@@ -253,7 +343,7 @@ All colors MUST be HSL.
 }
 
 /* Grilles en RTL - garder l'ordre naturel mais inverser le contenu */
-[dir="rtl"] .grid > * {
+[dir="rtl"] .grid>* {
   direction: rtl;
 }
 
@@ -266,4 +356,3 @@ All colors MUST be HSL.
 [dir="rtl"] .badge {
   direction: rtl;
 }
-

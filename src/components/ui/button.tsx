@@ -16,10 +16,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Cosmic Variants
-        stellar: "bg-cosmic-stellar-gold text-cosmic-deep-space hover:bg-cosmic-stellar-gold/90 cosmic-glow font-semibold",
-        nebula: "bg-gradient-to-r from-cosmic-nebula-purple to-cosmic-nebula-green text-cosmic-star-white hover:scale-105 cosmic-glow font-semibold transition-all duration-300",
-        cosmic: "bg-transparent border-2 border-cosmic-stellar-gold text-cosmic-stellar-gold hover:bg-cosmic-stellar-gold hover:text-cosmic-deep-space cosmic-glow transition-all duration-500 universe-effect",
-        royal: "bg-gradient-to-r from-cosmic-nebula-purple via-cosmic-stellar-gold to-cosmic-nebula-green p-[2px] bg-clip-border text-cosmic-star-white hover:shadow-2xl animate-pulse-glow",
+        stellar: "bg-cosmic-stellar-gold text-cosmic-deep-space hover:bg-cosmic-stellar-gold/90 cosmic-glow font-semibold relative overflow-hidden",
+        nebula: "bg-gradient-to-r from-cosmic-nebula-purple to-cosmic-nebula-green text-cosmic-star-white hover:scale-105 cosmic-glow font-semibold transition-all duration-300 relative overflow-hidden after:absolute after:inset-0 after:animate-shimmer after:content-['']",
+        cosmic: "bg-transparent border-2 border-cosmic-stellar-gold text-cosmic-stellar-gold hover:bg-cosmic-stellar-gold hover:text-cosmic-deep-space cosmic-glow transition-all duration-500 universe-effect relative overflow-hidden after:absolute after:inset-0 after:animate-shimmer after:content-[''] after:opacity-0 hover:after:opacity-100",
+        royal: "bg-gradient-to-r from-cosmic-nebula-purple via-cosmic-stellar-gold to-cosmic-nebula-green p-[2px] bg-clip-border text-cosmic-star-white hover:shadow-2xl animate-pulse-glow relative overflow-hidden after:absolute after:inset-0 after:animate-shimmer after:content-['']",
         darkCosmic: "bg-gradient-to-r from-cosmic-deep-space via-cosmic-nebula-purple to-cosmic-deep-space text-cosmic-star-white hover:from-cosmic-nebula-purple hover:via-cosmic-deep-space hover:to-cosmic-nebula-purple cosmic-glow font-semibold transition-all duration-500 border border-cosmic-nebula-purple/30",
       },
       size: {
@@ -39,7 +39,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
