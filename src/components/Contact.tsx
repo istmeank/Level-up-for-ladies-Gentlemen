@@ -20,7 +20,7 @@ const Contact = () => {
             {/* Statistiques cosmiques */}
             <div className="grid grid-cols-3 gap-8 mb-12 rtl:direction-ltr">
               <div className="text-center">
-                <div className="text-4xl font-bold cosmic-text">1000+</div>
+                <div className="text-4xl font-bold cosmic-text">​15 padaws satisfait(e)s   </div>
                 <div className="text-sm text-muted-foreground">{t('contact.transformed')}</div>
               </div>
               <div className="text-center">
