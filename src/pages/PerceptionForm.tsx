@@ -54,7 +54,7 @@ const PerceptionForm: React.FC = () => {
 							<span className="text-7xl font-heading text-perception-gold drop-shadow-[0_0_30px_rgba(255,215,0,0.5)]">∞</span>
 						</motion.div>
 
-						<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-wide mb-6 text-primary">
+						<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-wide mb-6 text-[#ddba48]">
 							Programme d'accompagnement 
 PERCEPTION
 						</h1>
