@@ -150,7 +150,7 @@ const ServicesProducts = () => {
                       <Button 
                         variant="stellar" 
                         className="w-full group"
-                        onClick={() => navigate('/perception')}
+                        onClick={() => navigate('/perception#video')}
                       >
                         {t('servicesProducts.apply')}
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
