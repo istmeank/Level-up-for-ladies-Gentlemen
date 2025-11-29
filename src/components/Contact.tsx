@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-
 const Contact = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   return <section className="py-20 px-6 relative">
       <div className="max-w-4xl mx-auto text-center">
         <div className="relative">
@@ -34,9 +35,7 @@ const Contact = () => {
 
             {/* CTA final */}
             <div className="space-y-6">
-              <Button variant="royal" size="xl" className="transform hover:scale-110 transition-all duration-300">
-                {t('contact.joinElite')}
-              </Button>
+              
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button variant="nebula" size="lg">
