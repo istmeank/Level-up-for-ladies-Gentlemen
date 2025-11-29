@@ -173,7 +173,7 @@ PERCEPTION
             delay: 0.8
           }} className="text-center">
 							<p className="text-xl md:text-2xl text-white/95 mb-8 font-medium">
-								<span className="font-bold text-perception-gold">Perception</span> est l'antithèse de cette industrie.
+								<span className="font-bold text-primary">Perception</span> est l'antithèse de cette industrie.
 							</p>
 							
 							<Button onClick={onApplyClick} size="lg" className="text-black font-semibold text-lg px-10 py-6 shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,215,0,0.5)] transition-all duration-300 bg-primary">
