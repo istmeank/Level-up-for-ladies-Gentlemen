@@ -26,12 +26,13 @@ const PerceptionForm: React.FC = () => {
 		>
 			<div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
 				{/* Hero Section */}
-				<motion.section 
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-black/40 via-black/30 to-black/40 p-8 md:p-12 shadow-cosmic-card backdrop-blur-md mb-16"
-				>
+			<motion.section 
+				id="programme"
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6 }}
+				className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-black/40 via-black/30 to-black/40 p-8 md:p-12 shadow-cosmic-card backdrop-blur-md mb-16"
+			>
 					<div className="absolute inset-0 pointer-events-none">
 						<div
 							className="absolute -left-32 -top-32 h-96 w-96 rounded-full"
