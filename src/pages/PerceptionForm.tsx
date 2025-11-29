@@ -51,7 +51,7 @@ const PerceptionForm: React.FC = () => {
             delay: 0.2,
             duration: 0.5
           }} className="mb-6">
-							<span className="text-7xl font-heading text-perception-gold drop-shadow-[0_0_30px_rgba(255,215,0,0.5)]">∞</span>
+							<span className="text-7xl font-heading drop-shadow-[0_0_30px_rgba(255,215,0,0.5)] text-[#ecdc5d]">∞</span>
 						</motion.div>
 
 						<h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-wide mb-6 text-[#ddba48]">
