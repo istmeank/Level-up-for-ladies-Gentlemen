@@ -48,14 +48,7 @@ const Contact = () => {
             </div>
 
             {/* Garantie */}
-            <div className="mt-12 p-6 bg-cosmic-nebula-purple/20 rounded-2xl border border-cosmic-nebula-purple/30">
-              <div className="text-cosmic-stellar-gold font-semibold mb-2">
-                {t('contact.guarantee')}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {t('contact.guaranteeText')}
-              </div>
-            </div>
+            
           </div>
         </div>
 
