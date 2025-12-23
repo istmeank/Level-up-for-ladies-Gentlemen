@@ -16,8 +16,8 @@ export const Section2Etat: React.FC = () => {
       {section.questions.map((q) => {
         if (q.type === "paragraph") {
           return (
-            <div key={q.id} className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <Label htmlFor={q.id} className="mb-2 block font-heading text-perception-gold">
+            <div key={q.id} className="rounded-xl border border-[#d9c34b]/20 bg-black/40 p-4 backdrop-blur">
+              <Label htmlFor={q.id} className="mb-2 block font-heading text-[#d9c34b]">
                 {q.label}
               </Label>
               <Textarea
@@ -37,8 +37,8 @@ export const Section2Etat: React.FC = () => {
         }
         if (q.type === "scale") {
           return (
-            <div key={q.id} className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <Label className="mb-2 block font-heading text-perception-gold">{q.label}</Label>
+            <div key={q.id} className="rounded-xl border border-[#d9c34b]/20 bg-black/40 p-4 backdrop-blur">
+              <Label className="mb-2 block font-heading text-[#d9c34b]">{q.label}</Label>
               <div className="mt-4">
                 <Slider
                   value={[Number(scaleValue)]}
@@ -47,7 +47,7 @@ export const Section2Etat: React.FC = () => {
                   step={1}
                   onValueChange={(v) => setValue(scaleId, v[0], { shouldValidate: true })}
                 />
-                <div className="mt-2 text-sm text-white/80">Valeur: <span className="font-semibold text-perception-gold">{scaleValue}</span></div>
+                <div className="mt-2 text-sm text-white/80">Valeur: <span className="font-semibold text-[#d9c34b]">{scaleValue}</span></div>
               </div>
               {errors[q.id] && <p className="mt-2 text-sm text-red-400">Sélectionne une valeur.</p>}
             </div>

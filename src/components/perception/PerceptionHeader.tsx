@@ -13,11 +13,11 @@ const infinityVariants = {
 };
 export const PerceptionHeader: React.FC = () => {
   return <header className="relative py-10 text-center">
-      <motion.div className="absolute right-6 top-6 text-[42px] text-perception-gold drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]" variants={infinityVariants} animate="animate" aria-hidden>
-        <span className="text-[42px] font-heading text-perception-gold">∞</span>
+      <motion.div className="absolute right-6 top-6 text-[42px] text-[#d9c34b] drop-shadow-[0_0_20px_rgba(217,195,75,0.5)]" variants={infinityVariants} animate="animate" aria-hidden>
+        <span className="text-[42px] font-heading text-[#d9c34b]">∞</span>
       </motion.div>
       <div className="mx-auto max-w-4xl">
-        <h1 className="text-5xl font-heading font-bold tracking-wide sm:text-6xl text-[#fcda5d]">
+        <h1 className="text-5xl font-heading font-bold tracking-wide sm:text-6xl text-[#d9c34b]">
           PERCEPTION
         </h1>
         <p className="mt-3 text-lg font-body text-cosmic-star-white/90">

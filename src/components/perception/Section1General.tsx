@@ -14,13 +14,13 @@ export const Section1General: React.FC = () => {
   return <div className="grid gap-6">
       {section.questions.map(q => {
       if (q.id === "gender") {
-        return <div key={q.id} className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <Label className="mb-2 block font-heading text-perception-gold">{q.label}</Label>
+        return <div key={q.id} className="rounded-xl border border-[#d9c34b]/20 bg-black/40 p-4 backdrop-blur">
+              <Label className="mb-2 block font-heading text-[#d9c34b]">{q.label}</Label>
               <div className="mt-2 flex flex-wrap gap-4">
                 {q.options?.map(opt => <label key={opt.value} className="flex cursor-pointer items-center gap-2 text-white/90">
                     <input type="radio" value={opt.value} {...register(q.id, {
                 required: q.required
-              })} className="accent-[#ffd700]" />
+              })} className="accent-[#d9c34b]" />
                     <span>{opt.label}</span>
                   </label>)}
               </div>
@@ -29,8 +29,8 @@ export const Section1General: React.FC = () => {
       }
       const isEmail = q.id === "email";
       const isWhatsapp = q.id === "whatsapp";
-      return <div key={q.id} className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur text-[#fefcec]">
-            <Label htmlFor={q.id} className="mb-2 block font-heading text-perception-gold">
+      return <div key={q.id} className="rounded-xl border border-[#d9c34b]/20 bg-black/40 p-4 backdrop-blur text-[#fefcec]">
+            <Label htmlFor={q.id} className="mb-2 block font-heading text-[#d9c34b]">
               {q.label}
             </Label>
             <Input id={q.id} placeholder={q.placeholder} className="bg-[hsl(var(--perception-input-bg))] text-white" {...register(q.id, {
