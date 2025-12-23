@@ -107,7 +107,7 @@ export const MultiStepForm: React.FC = () => {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-cosmic-card backdrop-blur">
+        <div className="rounded-2xl border border-[#d9c34b]/30 bg-black/60 p-6 shadow-cosmic-card backdrop-blur-md">
           <AnimatePresence mode="wait">
             {mode === "form" && (
               <motion.div
@@ -159,7 +159,7 @@ export const MultiStepForm: React.FC = () => {
             {mode === "review" ? "Retour au formulaire" : "Précédent"}
           </Button>
           {mode === "form" && (
-            <Button onClick={handleNext} className="bg-perception-gold text-black hover:bg-[#e6c200]">
+            <Button onClick={handleNext} className="bg-[#d9c34b] text-black hover:bg-[#c4b043]">
               {step < TOTAL_SECTIONS ? "Suivant" : "Revoir mes réponses"}
             </Button>
           )}

@@ -14,8 +14,8 @@ const ReviewRow: React.FC<{ label: string; value: any }> = ({ label, value }) =>
   const display =
     Array.isArray(value) ? (value.length ? value.join(", ") : "—") : value || "—";
   return (
-    <div className="grid grid-cols-1 gap-1 rounded-lg border border-white/10 bg-white/5 p-3 sm:grid-cols-3">
-      <div className="font-medium text-perception-gold">{label}</div>
+    <div className="grid grid-cols-1 gap-1 rounded-lg border border-[#d9c34b]/20 bg-black/40 p-3 sm:grid-cols-3">
+      <div className="font-medium text-[#d9c34b]">{label}</div>
       <div className="sm:col-span-2 text-white/90">{display}</div>
     </div>
   );
@@ -67,7 +67,7 @@ export const ReviewPage: React.FC<ReviewPageProps> = ({ onEditSection, onSubmit 
       </p>
       <div id="perception-review-container" className="space-y-8">
         {perceptionSections.map((section) => (
-          <div key={section.id} className="rounded-xl border border-white/10 bg-white/5 p-4">
+          <div key={section.id} className="rounded-xl border border-[#d9c34b]/20 bg-black/40 p-4">
             <div className="mb-3 flex items-center justify-between">
               <h4 className="text-lg font-heading text-white">{section.title}</h4>
               <Button
@@ -94,7 +94,7 @@ export const ReviewPage: React.FC<ReviewPageProps> = ({ onEditSection, onSubmit 
         >
           Télécharger PDF
         </Button>
-        <Button onClick={onSubmit} className="bg-perception-gold text-black hover:bg-[#e6c200]">
+        <Button onClick={onSubmit} className="bg-[#d9c34b] text-black hover:bg-[#c4b043]">
           Soumettre ma candidature
         </Button>
       </div>

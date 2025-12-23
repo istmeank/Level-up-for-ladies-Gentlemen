@@ -19,9 +19,9 @@ export const Stepper: React.FC<StepperProps> = ({ total, current }) => {
               className={[
                 "grid h-8 w-8 place-items-center rounded-full border backdrop-blur",
                 active
-                  ? "border-perception-gold/60 bg-white/10 shadow-gold-strong"
+                  ? "border-[#d9c34b]/60 bg-white/10 shadow-[0_0_15px_rgba(217,195,75,0.4)]"
                   : done
-                  ? "border-perception-gold/40 bg-white/10 shadow-gold-soft"
+                  ? "border-[#d9c34b]/40 bg-white/10 shadow-[0_0_10px_rgba(217,195,75,0.2)]"
                   : "border-white/10 bg-white/5",
               ].join(" ")}
               animate={{ scale: active ? 1.05 : 1 }}
@@ -31,7 +31,7 @@ export const Stepper: React.FC<StepperProps> = ({ total, current }) => {
               <span
                 className={[
                   "text-sm font-heading",
-                  active || done ? "text-perception-gold" : "text-white/60",
+                  active || done ? "text-[#d9c34b]" : "text-white/60",
                 ].join(" ")}
               >
                 {stepIndex}
@@ -39,8 +39,8 @@ export const Stepper: React.FC<StepperProps> = ({ total, current }) => {
             </motion.div>
             {stepIndex < total && (
               <div className="mx-2 h-[2px] w-8 rounded bg-white/10">
-                <motion.div
-                  className="h-full rounded bg-perception-gold"
+              <motion.div
+                  className="h-full rounded bg-[#d9c34b]"
                   initial={{ width: 0 }}
                   animate={{ width: done ? "100%" : active ? "50%" : "0%" }}
                   transition={{ duration: 0.5 }}
